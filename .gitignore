@@ -56,23 +56,3 @@ Thumbs.db
 .ai
 .psd
 
-# Wordpress +
-######################
-**/wordpress/*.php
-**/wordpress/*.txt
-**/wordpress/*.html
-
-**/wp-admin/
-**/wp-includes/
-**/wp-content/
-**/wp-content/plugins/**
- 
-# ADVANCED OPTION (disabled by default)
-# ignore everything in the "themes" directory,
-# except the themes you specify
-**/wp-content/themes/*
-!**/wp-content/themes/NothingNowhere_2014/
-!**/wp-content/themes/davidendersby_wp/
-!**/wp-content/themes/AndreaTodd/
-
-
