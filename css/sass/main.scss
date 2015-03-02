@@ -1,0 +1,14 @@
+//This is the new sass directory. Lets clean it all up!!
+
+@import  '_colors';
+@import '_fonts';
+@import '_helpers';
+@import '_global';
+
+@import '_frontPage';
+@import '_blogPage';
+@import '_musicPage';
+@import '_singleBlogPost';
+@import '_singleMusicPage';
+
+@import '_footer';
