@@ -1,0 +1,56 @@
+/*=========Blog Page=================*/
+.blog{
+	.post-link{
+		text-align: center;
+	}
+	article{
+		p{
+			padding: 0;
+		}
+	}
+	hr{
+		width: 66%;
+	}
+}
+.blog header, .single-post .svg-image-header{
+	@media(min-width: 700px){
+	@media(min-width: 700px){
+			margin-top: -150px;
+	}
+	svg{
+		height: auto;
+		max-height: 700px;
+		margin-top: 0;
+	}
+}
+.blog	article, .single-post article{
+	h1, .date{
+		padding: 0;
+		@media(max-width:990px){
+			text-align: center;
+		}
+	}
+}
+.blogWrapper{
+	//Adds margin to the first blog entry
+	.blogRow:first-child{
+		margin-top: 1em;
+	}
+	//Adds margin to the last blog entry
+	.blogRow:nth-last-of-type(1){
+		margin-bottom: 2em;
+	}
+	//Adds abit of vertical margin to all blog entries
+	.blogRow{
+		margin: 1.5em 0;
+	}
+	p{
+		clear: both;
+	}
+} 
+/*---Blog entry photo---*/
+.snapshot{
+	border: 3px solid #f0f4f4;
+	margin-top: 5px;
+	padding: 10px;
+}

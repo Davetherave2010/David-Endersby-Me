@@ -1,0 +1,30 @@
+.admin{
+	margin-top: 40px;
+	@media(min-width:783px){
+		margin-top: 30px;
+	}
+}
+
+@media(max-width: 767px){
+	nav{
+		text-align: center;
+		.navbar-header{
+			background-color: #00A3DF;
+			button{
+				color: white;
+				&:focus{
+					outline: none;
+				}
+			}
+		}
+		.navbar-toggle{
+			float: none;
+		}
+	}
+	.navbar{
+		background-image: none;
+		box-shadow: none;
+		margin: 0;
+		border: none;
+	}
+}

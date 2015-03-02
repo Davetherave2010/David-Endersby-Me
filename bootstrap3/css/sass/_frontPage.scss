@@ -1,0 +1,51 @@
+.home{
+	//Generic Page styles
+	p, a{
+		font-size: 0.9em;
+	}
+	h2{
+		font-size: 1.35em;
+	}
+	a{
+		color: #00A3DF;
+		&:hover, &:focus{
+			text-decoration: none;
+			color: #2a6496;
+		}
+	}
+	header{
+	//For Frontpage img
+		svg{
+			height: 600px;
+			height: 27.27em;
+			margin-top: 3em;
+			width: 100%;
+		}
+	}
+	//introduction Overrides
+	.introduction{
+		margin-bottom: 1.25em;
+		h2{
+			font-size: 2em;
+			margin: 0.75em 0 0.5em;
+		}
+		p{
+			font-size: 1em;
+			text-align: center;
+		}
+	}
+	.mainContent .row{
+		margin: 2.5em 0;
+		&:first-child{
+			margin-top: 0
+		}
+	}
+	@media(min-width:991px){
+		.padding-left-8pc{
+			padding-left: 8%;
+		}
+		.padding-right-8pc{
+			padding-right: 8%;
+		}
+	}
+}

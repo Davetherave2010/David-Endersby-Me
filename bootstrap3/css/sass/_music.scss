@@ -1,0 +1,270 @@
+/*=========Music Page================*/
+.page-template-music-php{
+	@media (max-width: 767px){
+		nav .navbar-header{
+			background-color: #EE4036;
+		}
+	}
+	nav li a{
+		color: #EE4036;
+	}
+	//Applied to all header elements 
+	header{
+		//Banner text size override
+		.banner-text{
+			margin: 9.9em 0;
+		}
+		svg{
+			width: 100%;
+			height: 610px;
+			margin-top: 50px;
+		}
+	}
+	//Adds spacing to the into paragraph
+	.intro{
+		margin-top: 2em;
+		margin-bottom: 2em;
+		text-align: center;
+	}
+	//Added equal spacing to the 'music wall' banner
+	.musicBlogWrapper > .banner-text{
+		margin-bottom: 1em;
+		h2{
+			margin-bottom: 2rem;
+		}
+	} 
+	.musicBlogRow{
+		padding: 0.5em 0;
+	}
+	hr{
+		margin-top: 0;
+		background-color: #EE4036;
+		width: 55%;
+	}
+	footer{
+		background-color: #EE4036;
+	}
+}
+/*---sets the hight of youtube iframes in the music-single.php. Browser cross compatible :-)---*/
+.blogRow .oneVideo iframe{
+	height: 424px;
+}
+/*Sets the Parameters for the play button*/
+.vid_play{
+	position: absolute;
+   	display: block;
+	background: url('../../img/YouTube-icon-dark.png') no-repeat;
+	background-size: contain;
+	height: 58px;
+	width: 83px;
+	z-index: 12;
+	opacity: .95;
+}
+/* Changes play icon to red one when the video pic is hovered over*/
+.vid_img:hover + .vid_play, .vid_play:hover{
+	background: url('../../img/YouTube-icon-full_color.png') no-repeat;
+	background-size: contain;
+}
+.twoVideos{
+	margin-bottom: 10px;
+}
+.oneVideo .vid_cutout, .twoVideos .vid_cutout, .oneVideo .vid_img, .twoVideos .vid_img{
+	width: 100%;
+}
+/*Sets the size of the cutout and the size of the image on the music.php page youtube8 is single posts, youtube is double posts*/
+.twoVideos .vid_cutout, .oneVideo .vid_cutout{
+	overflow: hidden;
+	height: 143px;
+	@media (min-width: 350px){
+		height: 159px;
+	}
+	@media (min-width: 399px){
+		height: 189px;
+	}
+	@media (min-width: 450px) {
+		height: 230px;
+	}
+	@media (min-width: 600px) {
+		height: 319px;
+	}
+	@media (min-width: 699px){
+		height: 363px;
+	}
+	@media (min-width: 767px) {
+		height: 378px;
+	}
+}
+.twoVideos .vid_img, .oneVideo .vid_img{
+	z-index: 9;
+	margin-top: -26px;
+	@media (min-width: 350px){
+		margin-top: -30px;
+	}
+	@media (min-width: 399px){
+		margin-top: -33px;
+	}
+	@media (min-width: 450px) {
+		margin-top: -43px;
+	}
+	@media (min-width: 600px) {
+		margin-top: -55px;
+	}
+	@media (min-width: 699px){
+		margin-top: -64px;
+	}
+	@media (min-width: 767px) {
+		margin-top: -69px;
+	}
+}
+//Fallback if no jquery Otherwise unused
+.twoVideos .vid_play, .oneVideo .vid_play{
+	top: -125px;
+	left: 100px;
+	@media (min-width: 350px){
+		top: -140px;
+		left: 110px;
+	}
+	@media (min-width: 399px){
+		top: -165px;
+		left: 150px;
+	}
+	@media (min-width: 450px) {
+		top: -190px;
+		left: 170px;
+	}
+	@media (min-width: 600px) {
+		top: -240px;
+		left: 250px;
+	}
+	@media (min-width: 699px){
+		top: -270px;
+		left: 380px;
+	}
+	@media (min-width: 767px) {
+		top: -295px;
+		left: 320px;
+	}
+}
+/*=========For Browsers between 992px and 1200px ================*/
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .blogRow .youtube iframe {
+      height: 204px;
+    }
+    /*Sets the size of the cutout and the size of the image on the music.php page youtube8 is single posts, youtube is double posts*/
+	.oneVideo{
+		/*Sets the positions of the play button for single and double post*/
+		.vid_play{
+			top: -261px;
+			left: 269px;
+		}
+		.vid_cutout{
+			height: 326px;
+		}
+		.vid_img{
+			margin-top: -60px;
+		}
+	} 
+	.twoVideos{
+		.vid_play{
+			top: -171px;
+			left: 149px;
+		}
+		.vid_cutout{
+			height: 198px;
+		}
+		.vid_img{
+			margin-top: -37px;
+		}
+	} 
+}
+/*=========For Browsers 1200px and up =============================*/
+@media (min-width: 1200px){
+	    /*Sets the positions of the play button for single and double post*/
+	.oneVideo{
+		.vid_play{
+			top: -295px;
+			left: 328px;
+		}
+		.vid_cutout{
+			height: 400px;
+		}
+		.vid_img{
+			margin-top: -73px;
+		}
+	} 
+	.twoVideos{
+		.vid_play{
+			top: -195px;
+			left: 180px;
+		}
+		.vid_cutout{
+			height: 243px;
+		}
+		.vid_img{
+			margin-top: -47px;
+		}
+	} 
+}
+
+.vid_info{
+	padding: 0.75em;
+	padding-bottom: 0;
+	text-align: center;
+	@media(min-width: 991px){
+		text-align: left;
+	}
+	a{
+		color: #333;
+		&:hover{
+			color: #EE4036;
+		}
+	}
+	a span, span{
+		background-size: 1em;
+		padding-left: 40px;
+	}
+	//Applies artist icon to music page info
+	a:nth-child(1) span{
+		background: url(../../img/artist.png) no-repeat 0 -1px;
+	}
+	//Applies cd icon to music page info
+	a:nth-child(2) span{
+		background: url(../../img/track.png) no-repeat 0 -1px;
+	}
+	//Applies calendar icon to music page info
+	a:nth-child(3) span, h3:nth-child(3) span{
+		background: url(../../img/posted.png) no-repeat 0 0;
+	}
+
+	//This Forces the time tag to go to the next line but only on small screens
+	time{
+		display: block;
+		@media(min-width: 550px){
+			display: inline;
+		}
+	}
+}
+@media(max-width: 991px){
+	.twoVideos .vid_info{
+		padding-bottom: 0.75em;
+	} 
+}
+.musicBlogRow h4{
+	color: darkgrey;
+	font-size: 1em;
+	padding-top: 1em;
+	padding-right: 0;
+	text-align: center;
+	cursor: default;
+	clear: both;
+	// @media(min-width: 991px){
+	// 	text-align: right;
+	// }
+	
+}
+.musicBlogRow h3{
+	font-family: 'arvobold',serif;
+	line-height: 1.15em;
+	margin: 0.25em 0;
+}

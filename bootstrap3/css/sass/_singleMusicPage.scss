@@ -1,0 +1,63 @@
+.single-music{
+	@media (max-width: 767px){
+		nav .navbar-header {
+		background-color: #EE4036;
+		}
+	}
+	nav li a{
+		color: #EE4036;
+	}
+	@media(min-width:768px){
+		header{
+			margin-bottom: 2px;
+		}
+	}
+	.single-music-blogWrapper{
+		padding-bottom: 2em;
+		@media(min-width:768px){
+			margin-top: 1em;
+		}
+		.vid_info{
+			padding-top: 0;
+			a:nth-child(1) span{
+				background: url(../../img/posted.png) no-repeat 0 0;
+				background-size: 1.2em !important;
+				padding-left: 35px;
+			}
+		}
+	}
+	.banner-text{
+		margin: 5em 0 3em;
+	}
+	.second-video-banner-text{
+		margin: 3em 0 3em;
+	}
+	footer{
+		background-color: #EE4036;
+	}
+}
+.single-music-video{
+	height: 225px;
+	@media(max-width: 766px){
+		padding: 0;
+		margin: 0 -15px;	
+	}
+	@media (min-width: 450px) {
+		height: 280px;
+	}
+	@media (min-width: 600px) {
+		height: 365px;
+	}
+	@media (min-width: 699px){
+		height: 422px;
+	}
+	@media (min-width: 767px) {
+		height: 388px;
+	}
+	@media (min-width: 992px) {
+		height: 424px;
+	}
+	@media (min-width: 1200px){
+		height: 518px;
+	}
+}

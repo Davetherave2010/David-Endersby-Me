@@ -1,0 +1,20 @@
+/*Affects all images in the achivements and experience section */
+#exp img, #achieve img {
+	margin-top: 40px;
+}
+/*Affects all images in the education section */
+#education img{
+	margin-top: 80px;
+}
+/*Affects the AUB image in the education section */
+/* #education img:nth-child(5){
+	margin-top: 135px;
+}*/
+/*Affects the Treehouse image in the education section */
+#education img:nth-child(7){
+	margin-top: 50px;
+}
+/*Affects the second image in the experience section */
+#exp img:nth-child(3){
+	margin-top: 70px;
+}
