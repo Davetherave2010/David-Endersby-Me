@@ -1,5 +1,5 @@
 footer{
-	text-align: center;
+	@extend %text-center;
 	img, svg{
 		height: 2.25em;
 		width: 2.25em;

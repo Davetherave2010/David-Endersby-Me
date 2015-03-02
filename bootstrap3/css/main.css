@@ -23,13 +23,13 @@ body {
   margin: 0; }
 
 /*---Makes 100% color backgrounds---*/
-.full-width {
+/*.full-width {
   width: 100%;
   margin: 0;
-  padding: 0; }
+  padding: 0; }*/
 
-.text-center {
-  text-align: center; }
+/*.text-center {
+  text-align: center; }*/
 
 @media (min-width: 991px) {
   .col-md-text-align-left {
@@ -94,7 +94,7 @@ header .banner-text {
     top: 5px; }
 
 /*---Page colours---*/
-.blue-bg {
+/*.blue-bg {
   background-color: #00A3DF; }
 
 .white-bg {
@@ -104,7 +104,7 @@ header .banner-text {
   background-color: #EE4036; }
 
 .grey-bg {
-  background-color: #F7FAFA; }
+  background-color: #F7FAFA; }*/
 
 /* Other options F96C1E A3CD39*/
 p {
@@ -184,7 +184,7 @@ blockquote {
   margin: 50px 0; }
 
 /*============Fonts============*/
-@font-face {
+/*@font-face {
   font-family: 'arvobold';
   src: url("../fonts/arvo-bold-webfont.eot");
   src: url("../fonts/arvo-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/arvo-bold-webfont.woff") format("woff"), url("../fonts/arvo-bold-webfont.ttf") format("truetype"), url("../fonts/arvo-bold-webfont.svg#arvobold") format("svg");
@@ -195,7 +195,7 @@ blockquote {
   src: url("../fonts/arvo-regular-webfont.eot");
   src: url("../fonts/arvo-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/arvo-regular-webfont.woff") format("woff"), url("../fonts/arvo-regular-webfont.ttf") format("truetype"), url("../fonts/arvo-regular-webfont.svg#arvoregular") format("svg");
   font-weight: normal;
-  font-style: normal; }
+  font-style: normal; }*/
 .admin {
   margin-top: 40px; }
   @media (min-width: 783px) {

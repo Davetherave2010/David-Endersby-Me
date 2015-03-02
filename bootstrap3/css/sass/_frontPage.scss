@@ -7,10 +7,10 @@
 		font-size: 1.35em;
 	}
 	a{
-		color: #00A3DF;
+		color: $c-blue;
 		&:hover, &:focus{
 			text-decoration: none;
-			color: #2a6496;
+			color: darken($c-blue, 10%);
 		}
 	}
 	header{
@@ -38,14 +38,6 @@
 		margin: 2.5em 0;
 		&:first-child{
 			margin-top: 0
-		}
-	}
-	@media(min-width:991px){
-		.padding-left-8pc{
-			padding-left: 8%;
-		}
-		.padding-right-8pc{
-			padding-right: 8%;
 		}
 	}
 }

@@ -1,22 +1,9 @@
 .single-music{
-	@media (max-width: 767px){
-		nav .navbar-header {
-		background-color: #EE4036;
-		}
-	}
 	nav li a{
-		color: #EE4036;
-	}
-	@media(min-width:768px){
-		header{
-			margin-bottom: 2px;
-		}
+		color: $c-red;
 	}
 	.single-music-blogWrapper{
 		padding-bottom: 2em;
-		@media(min-width:768px){
-			margin-top: 1em;
-		}
 		.vid_info{
 			padding-top: 0;
 			a:nth-child(1) span{
@@ -33,7 +20,7 @@
 		margin: 3em 0 3em;
 	}
 	footer{
-		background-color: #EE4036;
+		background-color: $c-red;
 	}
 }
 .single-music-video{

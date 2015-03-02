@@ -12,3 +12,68 @@
     }
   }
 }
+
+@media (max-width: 767px){
+  .page-template-music-php{
+    nav .navbar-header{
+      background-color: $c-red;
+    }
+  }
+  nav{
+    @extend %text-center;
+    .navbar-header{
+      background-color: $c-blue;
+      button{
+        color: white;
+        &:focus{
+          outline: none;
+        }
+      }
+    }
+    .navbar-toggle{
+      float: none;
+    }
+  }
+  .navbar{
+    background-image: none;
+    box-shadow: none;
+    margin: 0;
+    border: none;
+  }
+  .single-music nav .navbar-header {
+    background-color: $c-red;
+  }
+}
+@media(min-width:768px){
+  .single-music-blogWrapper{
+    margin-top: 1em;
+  }
+  .single-music{
+    header{
+      margin-bottom: 2px;
+    }
+  } 
+}
+
+@media(min-width:991px){
+  .padding-left-8pc{
+    padding-left: 8%;
+  }
+  .padding-right-8pc{
+    padding-right: 8%;
+  }
+  #disqus_thread{
+    width: 80%;
+    margin: 1.5em 10% 0;
+  }
+  .col-md-text-align-left{
+    text-align: left;
+  }
+  .col-md-text-align-right{
+    text-align: right;
+  }
+}
+
+@media(min-width:783px){
+  .admin{ margin-top: 30px;}
+}

@@ -13,10 +13,6 @@
 	}
 }
 .blog header, .single-post .svg-image-header{
-	@media(min-width: 700px){
-	@media(min-width: 700px){
-			margin-top: -150px;
-	}
 	svg{
 		height: auto;
 		max-height: 700px;
@@ -26,9 +22,6 @@
 .blog	article, .single-post article{
 	h1, .date{
 		padding: 0;
-		@media(max-width:990px){
-			text-align: center;
-		}
 	}
 }
 .blogWrapper{

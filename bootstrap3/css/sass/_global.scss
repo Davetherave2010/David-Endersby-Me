@@ -1,12 +1,12 @@
 body{
-	font-family: lato, sans-serif;
-	font-size: 20px;
-	background-color: white;
+	font-family: $f-body;
+	font-size: 16px;
+	background-color: $c-white;
 	-webkit-font-smoothing: subpixel-antialiased;
 }
 .ie-warning {background:#C60F13; margin-top:40px; padding:10px;}
-.ie-warning p {color:#fff;text-align:center; margin: 20px 0;}
-.ie-warning p a {color:#fff; font-weight: bold;text-decoration: underline;}
+.ie-warning p {color:$c-white;text-align:center; margin: 20px 0;}
+.ie-warning p a {color:$c-white; font-weight: bold;text-decoration: underline;}
 
 .row{
 	margin: 0;
@@ -20,20 +20,11 @@ body{
 .text-center{
 	text-align: center;
 }
-.col-md-text-align-left{
-	@media(min-width:991px){
-		text-align: left;
-	}
-}
-.col-md-text-align-right{
-	@media(min-width:991px){
-		text-align: right;
-	}
-}
+
 hr{
 	height: 2px;
 	width: 25%;
-	background-color: #00A3DF;
+	background-color: $c-blue;
 	-moz-border-radius: 2px;
 	-ms-border-radius: 2px;
 	-webkit-border-radius: 2px;
@@ -76,10 +67,6 @@ header{
 #disqus_thread{
 	width: 100%;
 	margin-top: 1.5em;
-	@media(min-width: 991px){
-		width: 80%;
-		margin: 1.5em 10% 0;
-	}
 }
 .social{
 	text-align: center;
@@ -92,15 +79,15 @@ header{
 }
 /*---Page colours---*/
 .blue-bg{
-  background-color: #00A3DF;
+  background-color: $c-blue;
 }
 .white-bg{
-  background-color: white;
+  background-color: $c-white;
 }
 .red-bg{
-	background-color: #EE4036;
+	background-color: $c-red;
 }
 .grey-bg{
-	background-color: #F7FAFA;
+	background-color: $c-grey;
 }
 /* Other options F96C1E A3CD39*/

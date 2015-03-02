@@ -1,12 +1,7 @@
 /*=========Music Page================*/
 .page-template-music-php{
-	@media (max-width: 767px){
-		nav .navbar-header{
-			background-color: #EE4036;
-		}
-	}
 	nav li a{
-		color: #EE4036;
+		color: $c-red;
 	}
 	//Applied to all header elements 
 	header{
@@ -38,11 +33,11 @@
 	}
 	hr{
 		margin-top: 0;
-		background-color: #EE4036;
+		background-color: $c-red;
 		width: 55%;
 	}
 	footer{
-		background-color: #EE4036;
+		background-color: $c-red;
 	}
 }
 /*---sets the hight of youtube iframes in the music-single.php. Browser cross compatible :-)---*/

@@ -12,7 +12,6 @@ register_nav_menus( array(
 
 function theme_styles(){
 	//Add any css style sheets here
-	wp_enqueue_style('bootstrap-theme-min', get_template_directory_uri() .'/bootstrap3/css/bootstrap-theme.min.css');
 	wp_enqueue_style('bootstrap-min', get_template_directory_uri() .'/bootstrap3/css/bootstrap.min.css');
 	wp_enqueue_style('main', get_template_directory_uri() .'/bootstrap3/css/main.css');
 
