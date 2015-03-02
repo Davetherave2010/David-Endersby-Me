@@ -3,7 +3,12 @@
 @include _colors;
 @include _fonts;
 @include _helpers;
+@include _global;
 
-body{
-	font-family: $f-body;
-}
+@include _frontPage;
+@include _blogPage;
+@include _musicPage;
+@include _singleBlogPost;
+@include _singleMusicPage;
+
+@include _footer;

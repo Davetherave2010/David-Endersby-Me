@@ -47,3 +47,20 @@
 	margin-top: 5px;
 	padding: 10px;
 }
+
+blockquote{
+	background-color: aliceblue;
+	border-left: 5px solid $c-blue;
+	padding: 1.25em 40px;
+	margin: 1em 0em;
+	span, p{
+		font-size: 1.05em;
+		a{
+			font-size: 0.9em;
+			font-weight: 500;
+		}
+	}
+	p:last-child{
+		margin-bottom: 1.5em;
+	}
+}
