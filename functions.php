@@ -12,8 +12,8 @@ register_nav_menus( array(
 
 function theme_styles(){
 	//Add any css style sheets here
-	wp_enqueue_style('bootstrap-min', get_template_directory_uri() .'/bootstrap3/css/bootstrap.min.css');
-	wp_enqueue_style('main', get_template_directory_uri() .'/bootstrap3/css/main.css');
+	wp_enqueue_style('bootstrap-min', get_template_directory_uri() .'/build/bootstrap.min.css');
+	wp_enqueue_style('main', get_template_directory_uri() .'/build/davidendersby_wp.min.css');
 
 	// wp_register_style('badges', get_template_directory_uri() .'/bootstrap3/css/badges.css');
 	// if (is_page('about')) {
@@ -21,17 +21,15 @@ function theme_styles(){
 	// }
 }
 function theme_js(){
-	wp_enqueue_script('bootstrap-min', get_template_directory_uri() .'/bootstrap3/js/bootstrap.min.js', array(),'',true);
-	wp_enqueue_script('html5shiv', get_template_directory_uri() .'/bootstrap3/js/html5shiv.js', array(),'',true);
-	wp_enqueue_script('html5shiv-print', get_template_directory_uri() .'/bootstrap3/js/html5shiv-printshiv.js', array(),'',true);
-	wp_enqueue_script('response-min', get_template_directory_uri() .'/bootstrap3/js/response.min.js', array('jquery'),'',true);
-	wp_enqueue_script('mainjs', get_template_directory_uri() .'/bootstrap3/js/main.js', array('jquery'),'',true);
-	wp_enqueue_script('musicjs', get_template_directory_uri() .'/bootstrap3/js/music.js', array('jquery'),'',true);
+	wp_enqueue_script('bootstrap-min', get_template_directory_uri() .'/js/bootstrap.min.js', array(),'',true);
+	wp_enqueue_script('response-min', get_template_directory_uri() .'/js/response.min.js', array('jquery'),'',true);
+	wp_enqueue_script('mainjs', get_template_directory_uri() .'/js/main.js', array('jquery'),'',true);
+	wp_enqueue_script('musicjs', get_template_directory_uri() .'/js/music.js', array('jquery'),'',true);
 	
-	wp_register_script('social', get_template_directory_uri() .'/bootstrap3/js/social.js', array(),'',true);
-	wp_register_script('picturefill', get_template_directory_uri() .'/bootstrap3/js/picturefill.min.js', array(),'',true);
-	wp_register_script('snap', get_template_directory_uri() .'/bootstrap3/js/snap.svg-min.js', array('jquery'),'',true);
-	wp_register_script('blogAnimation', get_template_directory_uri() .'/bootstrap3/js/blogAnimation.js', array('jquery'),'',true);
+	wp_register_script('social', get_template_directory_uri() .'/js/social.js', array(),'',true);
+	//wp_register_script('picturefill', get_template_directory_uri() .'/js/picturefill.min.js', array(),'',true);
+	wp_register_script('snap', get_template_directory_uri() .'/s/snap.svg-min.js', array('jquery'),'',true);
+	wp_register_script('blogAnimation', get_template_directory_uri() .'/s/blogAnimation.js', array('jquery'),'',true);
 
 	//HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
 	global $wp_scripts;
