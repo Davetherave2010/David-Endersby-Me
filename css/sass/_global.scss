@@ -39,6 +39,7 @@ a:hover, a:focus{
 }
 //Header overrides
 header{
+	padding-top: 51px;//height of nav
 	.banner-text{
 		margin: 11.22em 0;
 		text-align: center;
@@ -88,3 +89,6 @@ header{
 	margin-top: 40px;
 }
 
+.navbar{
+	background-color: $c-white;
+}
