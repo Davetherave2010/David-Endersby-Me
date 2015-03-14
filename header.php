@@ -28,7 +28,7 @@
 	</style>
 <?php } ?>
 
-	<script src="//use.typekit.net/blp4ndi.js"></script>
+	<script src="//use.typekit.net/bni8gbd.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
 
 	</head>
