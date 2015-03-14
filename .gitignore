@@ -56,3 +56,8 @@ Thumbs.db
 .ai
 .psd
 
+*.min.css
+*.min.css.map
+*.map
+*.min.js
+build/**/*

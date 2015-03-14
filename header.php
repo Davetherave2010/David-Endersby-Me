@@ -10,8 +10,6 @@
 
 		<?php get_template_part('content','meta'); ?>
 
-		<link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Lato:100,400,900' rel='stylesheet' type='text/css'>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<?php if ( is_page('music') ){ ?>
 		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon_music.ico" />
@@ -29,6 +27,10 @@
 		}
 	</style>
 <?php } ?>
+
+	<script src="//use.typekit.net/blp4ndi.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+
 	</head>
 
 	<?php get_template_part('content','navigation');?>
