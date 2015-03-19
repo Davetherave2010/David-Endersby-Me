@@ -2,5 +2,9 @@
 
 //Probs import from typekit
 $f-body: "Helvetica Neue",Helvetica,Arial,sans-serif; //Inherit from other body styling
-$f-heading: "futura-pt",sans-serif;
+$f-heading: "adelle",sans-serif;
+
+h1, h2, h3, h4, h5, h6{
+	font-family: $f-heading;
+}
 
