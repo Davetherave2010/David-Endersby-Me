@@ -1,0 +1,26 @@
+// Apply to wrapper elements (required for flexbox)
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+// For making items grow/shrink and basis
+// Options are: none | flex-grow flex-shrink || flex-basis
+// Default is: 0 1 auto
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+// If you want to change the order of items in a flexbox container (optional)
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;  
+  -moz-box-ordinal-group: $val;     
+  -ms-flex-order: $val;     
+  -webkit-order: $val;  
+  order: $val;
+}

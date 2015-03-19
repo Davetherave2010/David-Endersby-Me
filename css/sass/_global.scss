@@ -42,7 +42,16 @@ a:hover, a:focus{
 //Header overrides
 header{
 	padding-top: 51px;//height of nav
+	.row{
+		@include flexbox;
+		justify-content: center;
+		align-items: center;
+	}
 	.banner-text{
+		@include flexbox;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 		margin: 11.22em 0;
 		text-align: center;
 		color: $c-white;
