@@ -1,8 +1,8 @@
 //Creates a drawing surface
 var s = Snap("#drawing");
 
-//Loads the desktop svg file
-Snap.load("/davidendersby.wordpress/wp-content/themes/davidendersby_wp/img/blogHeaderDesk.svg", function(f){
+//Loads the desktop svg file. Was /davidendersby.wordpress/wp-content/themes/davidendersby_wp/img/blogHeaderDesk.svg
+Snap.load("/websites/older-davidendersby.me/wp-content/themes/davidendersby_wp/img/blogHeaderDesk.svg", function(f){
 	//Appends it to the surface
 	s.append(f);
 	//selects the right bar of the graph in the tablet
