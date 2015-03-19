@@ -11,21 +11,22 @@
 		}
 		svg{
 			width: 100%;
-			height: 610px;
-			margin-top: 50px;
+			height: 475px;
+			margin: 1em 0;
 		}
 	}
 	//Adds spacing to the into paragraph
-	.intro{
+	.introduction{
 		margin-top: 2em;
 		margin-bottom: 2em;
-		text-align: center;
 	}
 	//Added equal spacing to the 'music wall' banner
 	.musicBlogWrapper > .banner-text{
 		margin-bottom: 1em;
 		h2{
-			margin-bottom: 2rem;
+			margin: 0.6em 0;
+			color: $c-white;
+			text-align: center;
 		}
 	} 
 	.musicBlogRow{
@@ -48,7 +49,7 @@
 .vid_play{
 	position: absolute;
    	display: block;
-	background: url('../../img/YouTube-icon-dark.png') no-repeat;
+	background: url('../img/YouTube-icon-dark.png') no-repeat;
 	background-size: contain;
 	height: 58px;
 	width: 83px;
@@ -57,7 +58,7 @@
 }
 /* Changes play icon to red one when the video pic is hovered over*/
 .vid_img:hover + .vid_play, .vid_play:hover{
-	background: url('../../img/YouTube-icon-full_color.png') no-repeat;
+	background: url('../img/YouTube-icon-full_color.png') no-repeat;
 	background-size: contain;
 }
 .twoVideos{
@@ -221,15 +222,15 @@
 	}
 	//Applies artist icon to music page info
 	a:nth-child(1) span{
-		background: url(../../img/artist.png) no-repeat 0 -1px;
+		background: url(../img/artist.png) no-repeat 0 -1px;
 	}
 	//Applies cd icon to music page info
 	a:nth-child(2) span{
-		background: url(../../img/track.png) no-repeat 0 -1px;
+		background: url(../img/track.png) no-repeat 0 -1px;
 	}
 	//Applies calendar icon to music page info
 	a:nth-child(3) span, h3:nth-child(3) span{
-		background: url(../../img/posted.png) no-repeat 0 0;
+		background: url(../img/posted.png) no-repeat 0 0;
 	}
 
 	//This Forces the time tag to go to the next line but only on small screens

@@ -34,7 +34,7 @@ Template name: Music
 
 <div class="container blurb">
   <div class="row">
-    <div class="col-md-10 col-md-offset-1 intro">
+    <div class="col-md-10 col-md-offset-1 introduction">
         <?php if (have_posts()): while (have_posts()):the_post(); ?>
           <?php the_content(); ?>
         <?php endwhile; endif; 

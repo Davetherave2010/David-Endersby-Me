@@ -13,7 +13,7 @@
 			      </svg>
 	      	</a>
 	      	<p>Website made with <span class="glyphicon glyphicon-heart"></span> in Bournemouth, UK<br>
-	      		&copy; David Endersby <?php echo date("Y");?></p>
+	      		&copy; <?php echo date("Y");?> David Endersby</p>
 	      </div>
 	    </div>
 	</footer>

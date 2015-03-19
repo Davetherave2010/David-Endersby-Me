@@ -97,11 +97,21 @@ header{
 		top: 5px;
 	}
 }
-
 .admin{
 	margin-top: 40px;
 }
-
 .navbar{
 	background-color: $c-white;
+}
+//introduction Overrides
+.introduction{
+	margin-bottom: 1.25em;
+	h2{
+		font-size: 2em;
+		margin: 0.75em 0 0.5em;
+	}
+	p{
+		font-size: 1.1em;
+		text-align: center;
+	}
 }
