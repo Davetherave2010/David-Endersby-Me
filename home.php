@@ -12,8 +12,8 @@
 <?php while (have_posts()): the_post(); ?>
 	<div class="row blogRow">
 		<article>
-			<h1 class='col-sm-12 col-md-8'><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h1>
-			<h4 class='col-sm-12 col-md-4 col-md-text-align-right date'><?php echo get_the_date('jS F Y'); ?></h4>
+			<h1 class='col-sm-12 col-md-9'><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h1>
+			<h4 class='col-sm-12 col-md-3 date'><?php echo get_the_date('jS F Y'); ?></h4>
 
 			<p class='col-md-12'><?php echo get_the_excerpt(); ?></p>
 			<div class="col-md-12 post-link"><a href="<?php the_permalink(); ?>">Continue Reading &rarr;</a></div>
