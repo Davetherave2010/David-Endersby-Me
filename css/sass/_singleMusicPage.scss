@@ -5,19 +5,18 @@
 	.single-music-blogWrapper{
 		//padding-bottom: 2em;
 		.vid_info{
-			padding-top: 0;
 			a:nth-child(1) span{
-				background: url(../../img/posted.png) no-repeat 0 0;
+				background: url(../img/posted.png) no-repeat 0 0;
 				background-size: 1.2em !important;
 				padding-left: 35px;
 			}
 		}
 	}
 	.banner-text{
-		margin: 5em 0 3em;
+		margin: 5em 0;
 	}
 	.second-video-banner-text{
-		margin: 3em 0 3em;
+		margin: 3em 0;
 	}
 	footer{
 		background-color: $c-red;

@@ -2,8 +2,8 @@
 <header class="container-fluid red-bg">
   <div class="row">
     <div class="col-md-12 single-music-banner banner-text">
-      <h1><?php the_field('artist1') ?></h1>
-      <h2><?php the_field('title1') ?></h2>
+      <h1><?php the_field('title1') ?></h1>
+      <h2><?php the_field('artist1') ?></h2>
     </div>
   </div>
 </header>

@@ -4,29 +4,30 @@
 		text-align: center;
 	}
 	article{
-		p{
-			padding: 0;
-		}
+		p{ padding: 0; }
 	}
 	hr{
 		width: 66%;
 	}
+	h2 a{ color: $c-black; }
 	.date{
 		text-align: right;
 		font-size: 1.5em;
   	line-height: 1.55em;
 	}
+
 }
 .blog header, .single-post .svg-image-header{
 	svg{
-		height: auto;
+		//height: auto;
 		max-height: 700px;
 		margin-top: 0;
 	}
 }
 .blog	article, .single-post article{
-	h1, .date{
+	h2, .date{
 		padding: 0;
+		color: #333;
 	}
 }
 .blogWrapper{
