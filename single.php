@@ -32,7 +32,7 @@
   </ol>
 </div>
 
-<div class="container">
+<div class="container content-wrapper">
 	
 <?php if (have_posts()):while (have_posts()):the_post();?>
 	<article>

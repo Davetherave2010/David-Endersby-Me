@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<header class="container-fluid frontPage-banner blue-bg">
+<header class="container-fluid frontPage-banner content-wrapper">
   <div class="container">
   <div class="row">
     <div class="col-md-12 banner-text">

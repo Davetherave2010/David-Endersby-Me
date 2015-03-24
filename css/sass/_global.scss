@@ -1,14 +1,23 @@
+$body-font-size: 17px;
+html{height: 100%;}
 body{
 	//font-family: $f-body;
-	font-size: 17px;
+	position: relative;
+	min-height: 100%;
+	font-size: $body-font-size;
 	background-color: $c-white;
 	line-height: 1.6em;
 	font-weight: 300;
 	-webkit-font-smoothing: subpixel-antialiased;
 }
+
 .ie-warning {background:#C60F13; margin-top:40px; padding:10px;}
 .ie-warning p {color:$c-white;text-align:center; margin: 20px 0;}
 .ie-warning p a {color:$c-white; font-weight: bold;text-decoration: underline;}
+
+.content-wrapper{
+	padding-bottom: 9.25em; // height of footer
+}
 
 .row{
 	margin: 0;
@@ -98,7 +107,7 @@ header{
 	}
 }
 .admin{
-	margin-top: 40px;
+	margin-top: 32px;
 }
 .navbar{
 	background-color: $c-white;
@@ -120,4 +129,24 @@ header{
 		font-size: 1.1em;
 		text-align: center;
 	}
+}
+.error404{
+	background-color: $c-blue;
+	h1{ 
+		margin-bottom: 0.75em;
+		@include font-rem(2);
+	}
+	span{
+		font-weight: 100;
+	}
+	.banner-text p{
+		font-size: 1.8em;
+		font-weight: 100;
+		margin: 2em 0 0;
+		a{
+			color: $c-white;
+			border-bottom: 2px solid;
+		}
+	}
+
 }

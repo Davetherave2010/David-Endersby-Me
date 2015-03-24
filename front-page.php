@@ -28,7 +28,7 @@
   <hr>
 </div>
 
-<div class="container mainContent">
+<div class="container mainContent content-wrapper">
   <div class="row">
     <svg class="col-md-4 hidden-xs hidden-sm frontPage-icons" width="100%" height="280">
       <image xlink:href="<?php bloginfo('template_directory'); ?>/img/idea.svg" src="<?php bloginfo('template_directory'); ?>/img/idea.png" width="100%" height="280" class="img-responsive" alt="An illuminated light bulb illustration with 'idea' as the filament"/>

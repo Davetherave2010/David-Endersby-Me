@@ -8,7 +8,7 @@
   </div>
 </header>
 
-<div class="container single-music-blogWrapper">
+<div class="container single-music-blogWrapper content-wrapper">
 	<?php if (have_posts()):while (have_posts()):the_post();?>
   <div class="row">
     <div class="col-sm-12 col-md-10 col-md-offset-1 single-music-video">

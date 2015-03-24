@@ -43,7 +43,7 @@ Template name: Music
   </div>
 </div>
 
-<div class="container musicBlogWrapper" itemscope itemtype="http://schema.org/CreativeWork">
+<div class="container musicBlogWrapper content-wrapper" itemscope itemtype="http://schema.org/CreativeWork">
     
   <div class="row banner-text red-bg">
     <h2>Music Wall</h2>

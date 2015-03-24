@@ -24,3 +24,8 @@
   -webkit-order: $val;  
   order: $val;
 }
+
+@mixin font-rem($rems){
+  font-size: $body-font-size * $rems;
+  font-size: $rems rem;
+}

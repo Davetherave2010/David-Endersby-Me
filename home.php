@@ -6,7 +6,7 @@
     </svg>
 	</noscript>
 </header>
-<div class="container blogWrapper">
+<div class="container blogWrapper content-wrapper">
 
 <?php if (have_posts()): ?> 
 <?php while (have_posts()): the_post(); ?>
