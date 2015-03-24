@@ -51,3 +51,8 @@ function theme_js(){
 add_action('wp_enqueue_scripts', 'theme_styles');
 //Adds all javascript above to wp
 add_action('wp_enqueue_scripts', 'theme_js');
+
+add_action('get_header', 'remove_admin_login_header');
+function remove_admin_login_header() { //Removes wp admin inline css
+	remove_action('wp_head', '_admin_bar_bump_cb');
+}

@@ -50,7 +50,6 @@ a:hover, a:focus{
 }
 //Header overrides
 header{
-	padding-top: 51px;//height of nav
 	.row{
 		@include flexbox;
 		justify-content: center;
@@ -107,16 +106,13 @@ header{
 	}
 }
 .admin{
-	margin-top: 32px;
+	padding-top: 46px;
 }
 .navbar{
 	background-color: $c-white;
 }
 .navbar-collapse{
 	padding: 0;
-}
-.navbar-nav li:first-child a{
-	padding-left: 0;
 }
 //introduction Overrides
 .introduction{
