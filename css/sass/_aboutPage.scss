@@ -1,0 +1,26 @@
+.page-template-about{
+	header{
+		@extend %text-center;
+	}
+	h1{margin-bottom: 0;}
+}
+
+.about-intro{
+	margin: 1em 0 3em;
+}
+.about-profile{
+	ul{
+		list-style: none;
+		padding: 0;
+	}
+	&-skills{
+		display: flex;
+	  flex-wrap: wrap;
+	  align-items: center;
+	  li{
+  	  width: 25%;
+		  margin: 0.5em 0;
+		  opacity: 0.5;
+	  }
+	}
+}

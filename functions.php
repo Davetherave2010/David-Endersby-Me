@@ -21,6 +21,7 @@ function theme_styles(){
 	// }
 }
 function theme_js(){
+	wp_enqueue_script('modernizr', get_template_directory_uri() .'/js/modernizr.js', array(),'',false);
 	wp_enqueue_script('bootstrap-min', get_template_directory_uri() .'/js/bootstrap.min.js', array(),'',true);
 	wp_enqueue_script('response-min', get_template_directory_uri() .'/js/response.min.js', array('jquery'),'',true);
 	wp_enqueue_script('mainjs', get_template_directory_uri() .'/js/main.js', array('jquery'),'',true);
@@ -56,3 +57,13 @@ add_action('get_header', 'remove_admin_login_header');
 function remove_admin_login_header() { //Removes wp admin inline css
 	remove_action('wp_head', '_admin_bar_bump_cb');
 }
+
+/**
+ * Add SVG capabilities
+ */
+function wpcontent_svg_mime_type( $mimes = array() ) {
+  $mimes['svg']  = 'image/svg+xml';
+  $mimes['svgz'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter( 'upload_mimes', 'wpcontent_svg_mime_type' );
