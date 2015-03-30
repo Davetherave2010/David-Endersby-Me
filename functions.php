@@ -12,8 +12,8 @@ register_nav_menus( array(
 
 function theme_styles(){
 	//Add any css style sheets here
-	wp_enqueue_style('bootstrap-min', get_template_directory_uri() .'/build/bootstrap.min.css');
-	wp_enqueue_style('main', get_template_directory_uri() .'/build/davidendersby_wp.min.css');
+	wp_enqueue_style('bootstrap-min', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css');
+	wp_enqueue_style('main', get_template_directory_uri() .'/build/css/davidendersby_wp.min.css');
 
 	// wp_register_style('badges', get_template_directory_uri() .'/bootstrap3/css/badges.css');
 	// if (is_page('about')) {
@@ -21,15 +21,16 @@ function theme_styles(){
 	// }
 }
 function theme_js(){
-	wp_enqueue_script('modernizr', get_template_directory_uri() .'/js/modernizr.js', array(),'',false);
-	wp_enqueue_script('bootstrap-min', get_template_directory_uri() .'/js/bootstrap.min.js', array(),'',true);
-	wp_enqueue_script('response-min', get_template_directory_uri() .'/js/response.min.js', array('jquery'),'',true);
-	wp_enqueue_script('mainjs', get_template_directory_uri() .'/js/main.js', array('jquery'),'',true);
-	wp_enqueue_script('musicjs', get_template_directory_uri() .'/js/music.js', array('jquery'),'',true);
-	
-	wp_register_script('social', get_template_directory_uri() .'/js/social.js', array(),'',true);
-	wp_register_script('snap', get_template_directory_uri() .'/js/snap.svg-min.js', array('jquery'),'',true);
-	wp_register_script('blogAnimation', get_template_directory_uri() .'/js/blogAnimation.js', array('jquery'),'',true);
+	// wp_enqueue_script('modernizr', get_template_directory_uri() .'/js/modernizr.js', array(),'',false);
+	// wp_enqueue_script('bootstrap-min', get_template_directory_uri() .'/js/bootstrap.min.js', array(),'',true);
+	//wp_enqueue_script('response-min', get_template_directory_uri() .'/js/response.min.js', array('jquery'),'',true);
+	// wp_enqueue_script('mainjs', get_template_directory_uri() .'/js/main.js', array('jquery'),'',true);
+	wp_enqueue_script('core', get_template_directory_uri() .'/build/js/core.min.js', array('jquery'),'',true);
+
+	wp_register_script('musicjs', get_template_directory_uri() .'/build/js/music.min.js', array('jquery'),'',true);
+	wp_register_script('social', get_template_directory_uri() .'/build/js/social.min.js', array(),'',true);
+	wp_register_script('snap', get_template_directory_uri() .'/build/js/snap.min.js', array('jquery'),'',true);
+	wp_register_script('blogAnimation', get_template_directory_uri() .'/build/js/blogAnimation.min.js', array('jquery'),'',true);
 
 	//HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
 	global $wp_scripts;
@@ -46,6 +47,9 @@ function theme_js(){
 	}
 	if (is_single()) {
 		wp_enqueue_script('social');
+	}
+	if (is_page('Music') or is_singular('music')){
+		wp_enqueue_script('snap');
 	}
 }
 //Adds all style sheets above to wp

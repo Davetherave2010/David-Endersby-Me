@@ -3,15 +3,29 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    // Project configuration.
     uglify: {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
         sourceMap: true,
-        sourceMapName: 'build/<%= pkg.name %>-sourcemap.map'
+        sourceMapName: 'build/<%= pkg.name %>-sourcemap.map',
+        preserveComments: false,
+        compress: true,
+        mangle: false
       },
-      build: {
-        src: 'js/**/*.js',
-        dest: 'build/<%= pkg.name %>.min.js'
+      core_files:{
+        files: {
+          'build/js/core.min.js': ['js/core/*.js']
+        }
+      },
+      other_files:{
+        files:[{
+          expand: true,
+          cwd: 'js',
+          src: '*.js',
+          dest: 'build/js',
+          ext: '.min.js'
+        }]
       }
     },
     sass: {                              // Task
@@ -20,11 +34,17 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {                         // Dictionary of files
-          'build/<%= pkg.name %>.min.css': 'css/sass/main.scss',       // 'destination': 'source'
+          'build/css/<%= pkg.name %>.min.css': 'css/sass/main.scss'       // 'destination': 'source'
         }
       }
     },
     watch: {
+      php: {
+        files: '*.php',
+        options: {
+          livereload: true,
+        },
+      },
       css: {
         files: 'css/sass/**/*.scss',
         tasks: ['sass'],
