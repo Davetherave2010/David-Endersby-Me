@@ -8,7 +8,7 @@ module.exports = function(grunt) {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
         sourceMap: true,
-        sourceMapName: 'build/<%= pkg.name %>-sourcemap.map',
+        sourceMapName: 'build/css/<%= pkg.name %>-sourcemap.map',
         preserveComments: false,
         compress: true,
         mangle: false
