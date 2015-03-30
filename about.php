@@ -47,17 +47,17 @@
 
   <div class="col-md-8 about-treehouse">
     <h2>My Treehouse Points</h2>
-    <p>15,000 Total Points</p>
-    <ul>
+    <p><span>15,000<span> Total Points</p>
+    <ul class="about-treehouse-skills">
       <!-- Style like treehouse Profile page -->
-      <li>Html - 1000pts</li>
-      <li>Css - 1000pts</li>
-      <li>Javascript - 1000pts</li>
-      <li>PHP - 1000pts</li>
-      <li>Business - 1000pts</li>
-      <li>Dev tools - 1000pts</li>
-      <li>Wordpress - 100pts (self taught)</li>
-      <li>Design - 100pts</li>
+      <li class="html">Html - <span>1000</span>pts</li>
+      <li class="css">Css - <span>1000</span>pts</li>
+      <li class="js">Javascript - <span>1000</span>pts</li>
+      <li class="php">PHP - <span>1000</span>pts</li>
+      <li class="bus">Business - <span>1000</span>pts</li>
+      <li class="dev">Dev tools - <span>1000</span>pts</li>
+      <li class="word">Wordpress - <span>100</span>pts (self taught)</li>
+      <li class="des">Design - <span>100</span>pts</li>
     </ul>
     <!-- Add Most Recent Badges -->
   </div>
