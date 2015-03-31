@@ -47,7 +47,7 @@
 
   <div class="col-md-8 about-treehouse">
     <h2>My Treehouse Points</h2>
-    <p><span>15,000<span> Total Points</p>
+    <p><span>15,000</span> Total Points</p>
     <ul class="about-treehouse-skills">
       <!-- Style like treehouse Profile page -->
       <li class="html">Html - <span>1000</span>pts</li>
