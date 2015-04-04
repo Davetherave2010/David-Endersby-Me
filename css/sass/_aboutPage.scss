@@ -25,3 +25,33 @@
 	  }
 	}
 }
+.about-treehouse{
+	&-skills{
+		list-style: none;
+		padding: 0;
+		li{
+			display: inline-block;
+			width: 50%;
+		}
+		.bullet{
+			float: left;
+			display: block;
+			margin: 0.4em 0.5em 0 0;
+		  width: 0.75em;
+		  height: 0.75em;
+		  background-color: $c-grey;
+		  text-indent: -9999px;
+		  border-radius: 1em;
+		}
+		.javascript span{ background-color: $c-treehouse-js-red;}
+		.php span{ background-color: $c-treehouse-php-purple;}
+		.business span{ background-color: $c-treehouse-business-orange}
+		.css span{ background-color: $c-treehouse-css-blue;}
+		.development span{ background-color: $c-treehouse-dev-grey;}
+		.design span{ background-color: $c-treehouse-design-yellow;}
+		.html span{ background-color: $c-treehouse-html-blue;}
+		.wordpress span{ background-color: $c-treehouse-wordpress-purple;}
+		.ios span{ background-color: $c-treehouse-ios-blue;}
+		.android span{ background-color: $c-treehouse-android-green;}
+	}
+}

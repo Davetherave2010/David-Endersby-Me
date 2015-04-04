@@ -2,7 +2,8 @@
   var httpRequest,
       treehouse,
       aboutTreehouse = document.getElementsByClassName('about-treehouse')[0],
-      aboutTreehouseSkills = document.getElementsByClassName('about-treehouse-skills')[0];
+      aboutTreehouseSkills = document.getElementsByClassName('about-treehouse-skills')[0],
+      sortedTreehousePoints;
 
 
   makeRequest('//teamtreehouse.com/davidendersby.json');
@@ -39,8 +40,10 @@
       if (httpRequest.readyState === 4) {
         if (httpRequest.status === 200) {
           treehouse = JSON.parse(httpRequest.responseText);
+          sortedTreehousePoints = sortObject(treehouse.points, 'DESC');
           getTotalPoints();
           getPoints();
+          getTreehouseBadges();
         } else {
           alert('There was a problem with the request.');
         }
@@ -52,12 +55,17 @@
   //Loops though the treehouse points array and creates li elements that replace the non js fallback
   function getPoints(){
     deleteListItems('about-treehouse-skills');
-    for(var prop in treehouse.points){
+    for(var i in sortedTreehousePoints){
       //console.log(prop + " = " + treehouse.points[prop]);
-      if (treehouse.points[prop] >= 50 && prop !== "total") {
+      if (sortedTreehousePoints[i].value >= 50 && sortedTreehousePoints[i].key !== "total") {
+        var bullet = document.createElement('span');
+            bullet.appendChild(document.createTextNode('•'));
+            bullet.setAttribute('class', 'bullet');
+
         var listItem = document.createElement('li');
-            listItem.appendChild(document.createTextNode(prop + " - " + formatNumber(treehouse.points[prop]) + " pts"));
-            listItem.setAttribute('class', prop);
+            listItem.appendChild(bullet);
+            listItem.appendChild(document.createTextNode(sortedTreehousePoints[i].key + " - " + formatNumber(sortedTreehousePoints[i].value) + " pts"));
+            listItem.setAttribute('class', sortedTreehousePoints[i].key.toLowerCase());
 
         aboutTreehouseSkills.appendChild(listItem);
       };
@@ -83,5 +91,35 @@
       listClass.removeChild(listClass.firstChild)
     }
   }
+  function sortObject(obj, sortBy) {
+    sortBy = typeof sortBy !== 'undefined' ? sortBy : 'ASC'; //Default sort is Ascending
+    var arr = [];
+    for (var prop in obj) {
+        if (obj.hasOwnProperty(prop)) {
+            arr.push({
+                'key': prop,
+                'value': obj[prop]
+            });
+        }
+    }
+    if (sortBy === 'DESC') {
+      arr.sort(function(a, b) { return b.value - a.value; });
+    }else{
+      arr.sort(function(a, b) { return a.value - b.value; });
+    }
+    //arr.sort(function(a, b) { a.value.toLowerCase().localeCompare(b.value.toLowerCase()); }); //use this to sort as strings
+    return arr; // returns array
+}
+
+function getTreehouseBadges(){
+  var treehouseBadges = treehouse.badges,
+      totalTreehouseBadges = treehouseBadges.length;
+
+  for(var i = totalTreehouseBadges - 6; i <= totalTreehouseBadges - 1; i++){
+    console.log(treehouseBadges[i].name);
+  }
+
+}
+
  
 //})();
