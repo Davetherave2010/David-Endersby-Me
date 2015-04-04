@@ -113,12 +113,22 @@
 
 function getTreehouseBadges(){
   var treehouseBadges = treehouse.badges,
-      totalTreehouseBadges = treehouseBadges.length;
+      totalTreehouseBadges = treehouseBadges.length,
+      badgesList = document.createElement('ul');
+      badgesList.setAttribute('class', 'about-treehouse-badges')
 
   for(var i = totalTreehouseBadges - 6; i <= totalTreehouseBadges - 1; i++){
     console.log(treehouseBadges[i].name);
-  }
+    var badgeImage = document.createElement('img');
+        badgeImage.setAttribute('src', treehouseBadges[i].icon_url);
+        badgeImage.setAttribute('alt', treehouseBadges[i].name);
 
+    var badgesListItem = document.createElement('li');
+        badgesListItem.appendChild(badgeImage);
+
+        badgesList.appendChild(badgesListItem);
+  }
+  aboutTreehouse.appendChild(badgesList);
 }
 
  
