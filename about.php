@@ -62,8 +62,20 @@
     <!-- Add Most Recent Badges -->
   </div>
 
-  <div class="col-md-12 about-battlefield"></div>
-
+  <div class="col-md-8 about-battlefield">
+        <h2>Battlefield 4</h2>
+        <div class="col-md-10 col-md-offset-1">
+          <img class="col-xs-4" src="http://www.bf4stats.com/img/bf4/ranks/r111.png" alt="Rank 111 - Brigadier General II emblem">
+          <div class="col-sm-8 battlefieldStats">
+            <a href="http://battlelog.battlefield.com/bf4/user/Davetherave2014" id="battlefieldUserName">Davetherave2010</a>
+            <p id="battlefieldRank"><span>Brigadier General II</span></p>
+            <p id="battlefieldWorldRank"><span>World Rank</span> Top 5%</p>
+            <p id="battlefieldScore"><span>Score</span> 10,748,637</p>
+            <hr>
+          </div>
+        </div>
+        <div class="row clear-both battlefieldDetailedStats"><p id="battlefieldTimePlayed"><span>304 hours 5 minutes</span><br>Spent Playing</p><p id="battlefieldKills"><span>Kills</span> 11,306</p><p id="battlefieldDeaths"><span>Deaths</span> 13,694</p><p id="battlefieldShotsFired"><span>Bullets fired</span> 652,415</p><p id="battlefieldLongestHeadshot"><span>Longest Headshot</span> 326.47m</p><p id="battlefieldAccuracy"><span>91%</span> of bullets fired <br> fail to hit anyone</p></div>
+      <div class="blockFooter"><p>Data taken from <a href="http://battlelog.battlefield.com/bf4/soldier/Davetherave2010/stats/171303020/xboxone/" target="_blank">David Endersby's Battlefield 4 profile</a> using the <a href="http://bf4stats.com/xone/Davetherave2010" target="_blank">BF4stats API</a></p></div></div>
 </div>
 
 <?php include_once ("footer.php"); ?>

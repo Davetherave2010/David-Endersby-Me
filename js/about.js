@@ -62,9 +62,14 @@
             bullet.appendChild(document.createTextNode('•'));
             bullet.setAttribute('class', 'bullet');
 
+        var points = document.createElement('p');
+            points.appendChild(document.createTextNode(formatNumber(sortedTreehousePoints[i].value) + " pts"));
+            
+
         var listItem = document.createElement('li');
             listItem.appendChild(bullet);
-            listItem.appendChild(document.createTextNode(sortedTreehousePoints[i].key + " - " + formatNumber(sortedTreehousePoints[i].value) + " pts"));
+            listItem.appendChild(document.createTextNode(sortedTreehousePoints[i].key));
+            listItem.appendChild(points);
             listItem.setAttribute('class', sortedTreehousePoints[i].key.toLowerCase());
 
         aboutTreehouseSkills.appendChild(listItem);
