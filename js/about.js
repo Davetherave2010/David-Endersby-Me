@@ -122,7 +122,7 @@ function getTreehouseBadges(){
       badgesList = document.createElement('ul');
       badgesList.setAttribute('class', 'about-treehouse-badges')
 
-  for(var i = totalTreehouseBadges - 6; i <= totalTreehouseBadges - 1; i++){
+  for(var i = totalTreehouseBadges - 5; i <= totalTreehouseBadges - 1; i++){
     console.log(treehouseBadges[i].name);
     var badgeImage = document.createElement('img');
         badgeImage.setAttribute('src', treehouseBadges[i].icon_url);

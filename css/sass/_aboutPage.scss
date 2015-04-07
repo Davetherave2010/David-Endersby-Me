@@ -26,10 +26,23 @@
 	}
 }
 .about-treehouse{
-
+	h2{
+		text-align: center;
+	  font-size: 0.75em;
+	  color: grey;
+	  font-family: $f-heading;
+	}
+	& > p{
+		text-align: center;
+	  font-size: 1.1em;
+	  margin: 0;
+	}
+	span{
+		font-style: italic;
+	}
 	&-skills{
 		list-style: none;
-		margin: 0 auto 1em;
+		margin: 1em auto;
 		padding: 0;
 		width: 95%;
 		li{
@@ -64,12 +77,20 @@
 
 	}
 	&-badges{
-		padding: 0;
+		padding: 0 1.25em;
   	list-style: none;
   	li{
-  		width: 16.667%;
+  		width: 20%;
 		  display: inline-block;
-		  padding: 0.25em;
+		  padding: 0.4em 0.4em 0.2em;
+		  -webkit-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent), to(rgba(255,255,255,0.2)));
+		  -webkit-transition: padding 0.25s ease;
+		  -moz-transition: padding 0.25s ease;
+		  -ms-transition: padding 0.25s ease;
+		  transition: padding 0.25s ease;
+		  &:hover{
+		  	padding: 0.2em 0.4em 0.4em;
+		  }
   	}
   	img{ width: 100%; }
 	}
