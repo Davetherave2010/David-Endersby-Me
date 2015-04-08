@@ -22,10 +22,19 @@
   <div class="col-md-4 about-profile">
     <img src="https://graph.facebook.com/10152555016045907/picture?type=large" itemprop="image">
     <h2>David Endersby</h2>
-    <ul>
-      <li>Junior Web Designer &amp; Developer for Universal Music</li>
-      <li>Geological &amp; Environmental Hazards Post-Graduate</li>
-      <li>Geography Graduate</li>
+    <ul class="about-profile-intro">
+      <li>
+        <p>Junior Web Designer &amp; Developer
+        <span>Universal Music UK</span></p> 
+      </li>
+      <li>
+        <p>Geological &amp; Environmental Hazards MSc
+        <span>Portsmouth University</span></p>
+      </li>
+      <li>
+        <p>Geography BSc (Hons)
+        <span>Plymouth University</span></p>
+      </li>
     </ul>
     <h3>Skills</h3>
     <ul class="about-profile-skills">
