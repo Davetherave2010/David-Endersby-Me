@@ -26,11 +26,10 @@
 	}
 }
 .about-treehouse{
+	padding-bottom: 2em;
+	overflow: hidden;
 	h2{
-		text-align: center;
-	  font-size: 0.75em;
-	  color: grey;
-	  font-family: $f-heading;
+	@extend %about-section-titles;
 	}
 	& > p{
 		text-align: center;
@@ -93,5 +92,71 @@
 		  }
   	}
   	img{ width: 100%; }
+	}
+}
+.about-battlefield{
+	margin-top: 1em;
+	h2{
+		@extend %about-section-titles;
+		margin-bottom: 1em;
+	}
+	&-summary{
+		@include flexbox();
+		flex-wrap: wrap;
+	  align-content: center;
+	  justify-content: center;
+	  align-items: center;
+
+		text-transform: uppercase;
+		text-align: center;
+		font-size: 1.25em;
+		font-weight: bold;
+		a{
+			display: block;
+			margin-bottom: 0.25em;
+			color: $c-black;
+		}
+		span{
+			font-weight: 300;
+		}
+		hr{
+			display: block;
+			width: 50%;
+			margin: 0.25em 0;
+		}
+	}
+	&-detailed-stats{
+		clear: both;
+		padding: 0.75em 0;
+		text-align: center;
+		font-size: 1.5em;
+		font-weight: bold;
+		span{
+			font-weight: 300;
+		}
+		#battlefieldTimePlayed, #battlefieldAccuracy{
+			font-weight: 300;
+		}
+		#battlefieldTimePlayed span{
+			display: block;
+			margin-bottom: 0.1em;
+			font-size: 1.1em;
+			font-weight: bold;
+		}
+		.battlefield-accuracy{
+			display: inline-block;
+			font-weight: 300;
+			text-align: left;
+			margin: 0.1em 0;
+		}
+		span.battlefield-accuracy{
+			margin-right: 5px;
+			font-weight: bold;
+			line-height: 60px;
+		  font-size: 2.5em;
+		}
+	}
+	.block-footer{
+		text-align: center;
 	}
 }

@@ -78,8 +78,11 @@
   }
   //Gets the total number of treehouse points and updates the span tag
   function getTotalPoints(){
-    var totalTreehousePoints = formatNumber(treehouse.points.total);
-    aboutTreehouse.getElementsByTagName('span')[0].innerHTML = totalTreehousePoints;
+    var totalTreehousePoints = formatNumber(treehouse.points.total),
+        totalCoursesCompleted = treehouse.badges.length;
+
+    aboutTreehouse.getElementsByClassName('completed-courses')[0].innerHTML = totalCoursesCompleted;   
+    aboutTreehouse.getElementsByClassName('total-points')[0].innerHTML = totalTreehousePoints;
   }
   /*Formats numbers by adding thousand commas
    *Params: num - Number to format

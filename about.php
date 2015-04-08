@@ -47,7 +47,7 @@
 
   <div class="col-md-8 about-treehouse">
     <h2>Treehouse</h2>
-    <p>Completed <span>100<span> courses and earned <span>15,000</span> Points on Treehouse</p>
+    <p>Completed <span class="completed-courses">100</span> courses and earned <span class="total-points">15,000</span> Points on Treehouse</p>
     <ul class="about-treehouse-skills">
       <!-- Style like treehouse Profile page -->
     </ul>
@@ -56,18 +56,26 @@
 
   <div class="col-md-8 about-battlefield">
         <h2>Battlefield 4</h2>
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12 about-battlefield-summary">
           <img class="col-xs-4" src="http://www.bf4stats.com/img/bf4/ranks/r111.png" alt="Rank 111 - Brigadier General II emblem">
-          <div class="col-sm-8 battlefieldStats">
+          <div class="col-sm-7 about-battlefield-summary">
             <a href="http://battlelog.battlefield.com/bf4/user/Davetherave2014" id="battlefieldUserName">Davetherave2010</a>
-            <p id="battlefieldRank"><span>Brigadier General II</span></p>
-            <p id="battlefieldWorldRank"><span>World Rank</span> Top 5%</p>
-            <p id="battlefieldScore"><span>Score</span> 10,748,637</p>
+            <p id="battlefieldRank">Brigadier General II</p>
+            <p id="battlefieldWorldRank">World Rank <span>Top 5%</span></p>
+            <p id="battlefieldScore">Score <span>10,748,637</span></p>
             <hr>
           </div>
         </div>
-        <div class="row clear-both battlefieldDetailedStats"><p id="battlefieldTimePlayed"><span>304 hours 5 minutes</span><br>Spent Playing</p><p id="battlefieldKills"><span>Kills</span> 11,306</p><p id="battlefieldDeaths"><span>Deaths</span> 13,694</p><p id="battlefieldShotsFired"><span>Bullets fired</span> 652,415</p><p id="battlefieldLongestHeadshot"><span>Longest Headshot</span> 326.47m</p><p id="battlefieldAccuracy"><span>91%</span> of bullets fired <br> fail to hit anyone</p></div>
-      <div class="blockFooter"><p>Data taken from <a href="http://battlelog.battlefield.com/bf4/soldier/Davetherave2010/stats/171303020/xboxone/" target="_blank">David Endersby's Battlefield 4 profile</a> using the <a href="http://bf4stats.com/xone/Davetherave2010" target="_blank">BF4stats API</a></p></div></div>
+        <div class="row about-battlefield-detailed-stats">
+          <p id="battlefieldTimePlayed"><span>304 hours 5 minutes</span>Spent Playing</p>
+          <p id="battlefieldKills">Kills <span>11,306</span></p>
+          <p id="battlefieldDeaths">Deaths <span>13,694</span></p>
+          <p id="battlefieldShotsFired">Bullets fired <span>652,415</span></p>
+          <p id="battlefieldLongestHeadshot">Longest Headshot <span>326.47m</span></p>
+          <span class="battlefield-accuracy">91%</span>
+          <p class="battlefield-accuracy"> of bullets fired <br> fail to hit anyone</p>
+        </div>
+      <div class="block-footer"><p>Data taken from <a href="http://battlelog.battlefield.com/bf4/soldier/Davetherave2010/stats/171303020/xboxone/" target="_blank">David Endersby's Battlefield 4 profile</a> using the <a href="http://bf4stats.com/xone/Davetherave2010" target="_blank">BF4stats API</a></p></div></div>
 </div>
 
 <?php include_once ("footer.php"); ?>
