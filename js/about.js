@@ -4,14 +4,14 @@
       aboutTreehouse = document.getElementsByClassName('about-treehouse')[0],
       aboutTreehouseSkills = document.getElementsByClassName('about-treehouse-skills')[0],
       sortedTreehousePoints;
-
-
-  makeRequest('//teamtreehouse.com/davidendersby.json');
   
   /*Tests to see if ajax is available then Creates an Ajax request. 
    *Params: url - the api url
+   *        type - the type of request (get, post). Default is get
+   *        callback - function to process the ajax response
    */
-  function makeRequest(url) {
+  function makeRequest(url, type, callback) {
+    type = typeof type !== 'undefined' ? type : 'GET';
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
       httpRequest = new XMLHttpRequest();
     } else if (window.ActiveXObject) { // IE
@@ -30,28 +30,27 @@
       alert('Giving up :( Cannot create an XMLHTTP instance');
       return false;
     }
-    httpRequest.onreadystatechange = getContents;
-    httpRequest.open('GET', url);
+    httpRequest.onreadystatechange = function(){
+      try {
+        if (httpRequest.readyState === 4) {
+          if (httpRequest.status === 200) {
+            //Should just return the json
+            var response = JSON.parse(httpRequest.responseText);
+            // console.log(response);
+            callback(response);
+          } else {
+            alert('There was a problem with the request.');
+          }
+        }
+      } catch(e) {
+        alert('Caught Exception: ' + e.description);
+      }
+    }
+    httpRequest.open(type, url);
+    //httpRequest.setRequestHeader('Content-Type', 'application/xml');
     httpRequest.send();
   }
-  // Turns the ajax response into JSON and updates the html by running other functions
-  function getContents() {
-    try {
-      if (httpRequest.readyState === 4) {
-        if (httpRequest.status === 200) {
-          treehouse = JSON.parse(httpRequest.responseText);
-          sortedTreehousePoints = sortObject(treehouse.points, 'DESC');
-          getTotalPoints();
-          getPoints();
-          getTreehouseBadges();
-        } else {
-          alert('There was a problem with the request.');
-        }
-      }
-    } catch(e) {
-      alert('Caught Exception: ' + e.description);
-    }
-  }
+
   //Loops though the treehouse points array and creates li elements that replace the non js fallback
   function getPoints(){
     deleteListItems('about-treehouse-skills');
@@ -77,7 +76,7 @@
     }
   }
   //Gets the total number of treehouse points and updates the span tag
-  function getTotalPoints(){
+  function getTotalPoints(treehouse){
     var totalTreehousePoints = formatNumber(treehouse.points.total),
         totalCoursesCompleted = treehouse.badges.length;
 
@@ -119,14 +118,14 @@
     return arr; // returns array
 }
 
-function getTreehouseBadges(){
+function getTreehouseBadges(treehouse){
   var treehouseBadges = treehouse.badges,
       totalTreehouseBadges = treehouseBadges.length,
       badgesList = document.createElement('ul');
       badgesList.setAttribute('class', 'about-treehouse-badges')
 
   for(var i = totalTreehouseBadges - 5; i <= totalTreehouseBadges - 1; i++){
-    console.log(treehouseBadges[i].name);
+    //console.log(treehouseBadges[i].name);
     var badgeImage = document.createElement('img');
         badgeImage.setAttribute('src', treehouseBadges[i].icon_url);
         badgeImage.setAttribute('alt', treehouseBadges[i].name);
@@ -139,5 +138,17 @@ function getTreehouseBadges(){
   aboutTreehouse.appendChild(badgesList);
 }
 
- 
+//This makes the ajax request and then allows you to say what you want to do with the response.
+makeRequest('//teamtreehouse.com/davidendersby.json', 'GET', function(responses){
+  //console.log(responses);
+  sortedTreehousePoints = sortObject(responses.points, 'DESC');
+  getTotalPoints(responses);
+  getPoints();
+  getTreehouseBadges(responses);
+});
+
+ //Not Working
+//  makeRequest('http://api.bf4stats.com/api/playerInfo?plat=xone&name=davetherave2010&output=json','post', function(response){
+//   console.log(response);
+// });
 //})();
