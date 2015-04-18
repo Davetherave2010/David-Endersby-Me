@@ -2,8 +2,8 @@
 
 //(function() {
     var treehouse,
-      aboutTreehouse = document.getElementsByClassName('about-treehouse')[0],
-      aboutTreehouseSkills = document.getElementsByClassName('about-treehouse-skills')[0],
+      aboutTreehouse = document.querySelector('.about-treehouse'),
+      aboutTreehouseSkills = document.querySelector('.about-treehouse-skills'),
       sortedTreehousePoints;
   
   /*Tests to see if ajax is available then Creates an Ajax request. 
@@ -139,7 +139,7 @@ function getTreehouseBadges(treehouse){
 
         badgesList.appendChild(badgesListItem);
   }
-  aboutTreehouse.appendChild(badgesList);
+  aboutTreehouse.querySelector('.card').insertBefore(badgesList, aboutTreehouse.getElementsByTagName('p')[0]);
 }
 // Gets battlefield ajax response and inserts it into the summary div
 function getBattlefieldSummaryData(battlefield){

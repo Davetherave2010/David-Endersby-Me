@@ -1,12 +1,22 @@
 .page-template-about{
+	background-color: $c-light-grey;
 	header{
 		@extend %text-center;
 	}
 	h1{margin-bottom: 0;}
+	section[class^='col-']{
+		padding: 0;
+	}
+}
+.card{
+	background-color: $c-white;
+	border-radius: 3px;
+	padding: 1em;
+	margin: 0 0.325em;
 }
 
 .about-intro{
-	margin: 1em 0 3em;
+	margin: 1em 0;
 }
 .about-profile{
 	text-align: center;
@@ -44,7 +54,7 @@
 	h2{
 	@extend %about-section-titles;
 	}
-	& > p{
+	.card > p{
 		text-align: center;
 	  font-size: 1.1em;
 	  margin: 0;
@@ -89,19 +99,23 @@
 
 	}
 	&-badges{
+		margin: 1.5em 0 2em;
 		padding: 0 1.25em;
   	list-style: none;
   	li{
+  		display: inline-block;
+  		position: relative;
+  		top: 0;
   		width: 20%;
-		  display: inline-block;
 		  padding: 0.4em 0.4em 0.2em;
 		  -webkit-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent), to(rgba(255,255,255,0.2)));
-		  -webkit-transition: padding 0.25s ease;
-		  -moz-transition: padding 0.25s ease;
-		  -ms-transition: padding 0.25s ease;
-		  transition: padding 0.25s ease;
+		  // -webkit-transition: all 0.5s ease;
+		  // -moz-transition: all 0.5s ease;
+		  // -ms-transition: all 0.5s ease;
+		  // transition: all 0.5s ease;
 		  &:hover{
-		  	padding: 0.2em 0.4em 0.4em;
+		  	top: -20px;
+  			-webkit-box-reflect: below 30px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent), to(rgba(255,255,255,0.2)));
 		  }
   	}
   	img{ width: 100%; }
