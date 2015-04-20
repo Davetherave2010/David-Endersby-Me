@@ -133,6 +133,7 @@ function getTreehouseBadges(treehouse){
     var badgeImage = document.createElement('img');
         badgeImage.setAttribute('src', treehouseBadges[i].icon_url);
         badgeImage.setAttribute('alt', treehouseBadges[i].name);
+        badgeImage.setAttribute('name', treehouseBadges[i].name);
 
     var badgesListItem = document.createElement('li');
         badgesListItem.appendChild(badgeImage);
@@ -141,21 +142,26 @@ function getTreehouseBadges(treehouse){
   }
   aboutTreehouse.querySelector('.card').insertBefore(badgesList, aboutTreehouse.getElementsByTagName('p')[0]);
 }
+//A function that returns the url for the player emblem
+function getBattlefieldEmblem(battlefield){
+  var battlefieldEmblemImage = battlefield.player.rank.imgLarge;
+
+  battlefieldEmblemImage = '//www.bf4stats.com/img/' + battlefieldEmblemImage;
+  return battlefieldEmblemImage;
+}
 // Gets battlefield ajax response and inserts it into the summary div
 function getBattlefieldSummaryData(battlefield){
   var battlefieldSummaryData = document.querySelector('.about-battlefield-summary'),
+      battlefieldEmblem = battlefieldSummaryData.querySelector('img'),
       battlefieldUsername = battlefieldSummaryData.querySelector('#battlefieldUserName'),
       battlefieldRank = battlefieldSummaryData.querySelector('#battlefieldRank'),
       battlefieldScore = battlefieldSummaryData.querySelector('#battlefieldScore');
 
+ battlefieldEmblem.setAttribute('src', getBattlefieldEmblem(battlefield));
+
   battlefieldUsername.textContent = battlefield.player.name;
   battlefieldRank.textContent = battlefield.player.rank.name;
   battlefieldScore.getElementsByTagName('span')[0].textContent = formatNumber(battlefield.player.score);
-}
-// Calculates the world rank. Unfinished. Needs new ajax call
-function getBattlefieldWorldRank(battlefieldRankData){
-  var battlefieldWorldRank = document.querySelector('#battlefieldWorldRank');
-  //battlefieldWorldRank.getElementsByTagName('span')[0].innerHTML = 'Top ' + battlefield.
 }
 // Gets battlefield ajax response and inserts it into the detailed stats div
 function getBattlefieldDetailedStats(battlefield){
@@ -205,6 +211,17 @@ function getBattlefieldShotsMissed(battlefield){
 
   return missed + '%';
 }
+//Calculates rank percentage and inputs into dom
+function getBattlefieldWorldRanking(battlefieldRankings){
+  var battlefieldWorldRank = document.querySelector('#battlefieldWorldRank span');
+
+  var totalUserCount = battlefieldRankings.rankings[0].count,
+      myRank = battlefieldRankings.rankings[0].rank,
+      percentageRank = Math.round((myRank/totalUserCount) * 100);
+
+  battlefieldWorldRank.textContent = 'Top ' + percentageRank + "%";
+  //return percentageRank;
+}
 //This makes the ajax request and then allows you to say what you want to do with the response.
 makeRequest('//teamtreehouse.com/davidendersby.json', 'GET', function(treehouseData){
   //console.log(treehouseData);
@@ -214,11 +231,13 @@ makeRequest('//teamtreehouse.com/davidendersby.json', 'GET', function(treehouseD
   getTreehouseBadges(treehouseData);
 });
 
-//  //Not Working
  makeRequest('http://api.bf4stats.com/api/playerInfo?plat=xone&name=davetherave2010&output=json','POST', function(battlefieldData){
   //console.log(battlefieldData);
   getBattlefieldSummaryData(battlefieldData);
   getBattlefieldDetailedStats(battlefieldData);
 });
 
+makeRequest('http://api.bf4stats.com/api/playerRankings?plat=xone&name=davetherave2010&output=json','POST', function(battlefieldRankings){
+  getBattlefieldWorldRanking(battlefieldRankings);
+});
 //})();
