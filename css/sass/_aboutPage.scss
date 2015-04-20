@@ -1,8 +1,5 @@
 .page-template-about{
 	background-color: $c-light-grey;
-	header{
-		@extend %text-center;
-	}
 	h1{margin-bottom: 0;}
 	section[class^='col-']{
 		padding: 0;
@@ -17,9 +14,14 @@
 
 .about-intro{
 	margin: 1em 0;
+	&-title{
+		@extend %text-center;
+		text-align: center;
+	}
 }
 .about-profile{
 	text-align: center;
+	margin-bottom: 0.75em;
 	h2{
 		margin: 0.25em 0;
 	}
@@ -37,11 +39,14 @@
 		}
 	}
 	&-skills{
-		display: flex;
-	  flex-wrap: wrap;
-	  align-items: center;
+		clear: both;
+		ul{
+			display: flex;
+		  flex-wrap: wrap;
+		  align-items: center;
+		}
 	  li{
-  	  width: 25%;
+  	  width: 16.66667%;
 		  margin: 0.5em 0;
 		  padding: 0.25em;
 		  opacity: 0.5;
@@ -52,7 +57,7 @@
 	padding-bottom: 2em;
 	overflow: hidden;
 	h2{
-	@extend %about-section-titles;
+		@extend %about-section-titles;
 	}
 	.card > p{
 		text-align: center;
@@ -63,14 +68,15 @@
 		font-style: italic;
 	}
 	&-skills{
-		list-style: none;
-		margin: 1em auto;
 		padding: 0;
 		width: 95%;
+		list-style: none;
+		margin: 1em auto;
 		li{
 			display: inline-block;
+			vertical-align: top;
 			// margin: 0.25em 0;
-			width: 25%;
+			width: 50%;
 		}
 		p {
 		  font-size: 0.9em;
