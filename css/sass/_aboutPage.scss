@@ -53,6 +53,15 @@
 	  }
 	}
 }
+.nojs-warning .card{
+	background-color: $c-treehouse-business-orange;
+	color: white;
+	margin-bottom: 1em;
+	text-align: center;
+	p{
+		margin-bottom: 0;
+	}
+}
 .about-treehouse{
 	padding-bottom: 2em;
 	overflow: hidden;

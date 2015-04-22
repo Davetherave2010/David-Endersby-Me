@@ -61,11 +61,16 @@
     </div>
   </section>
 
+  <section class="col-md-8 nojs-warning">
+    <div class="card">
+      <p>Sadly the next sections require Javascript. Turn it on to start seeing what it can do.</p>
+    </div>
+  </section>
 
   <section class="col-md-8 about-treehouse">
     <div class="card">
       <h2>Treehouse</h2>
-      <p>Completed <span class="completed-courses">100</span> courses and earned <span class="total-points">15,000</span> Points on Treehouse</p>
+      <p>Completed <span class="completed-courses">227</span> courses and earned <span class="total-points">15,000</span> Points on Treehouse</p>
       <ul class="about-treehouse-skills">
         <!-- Style like treehouse Profile page -->
       </ul>

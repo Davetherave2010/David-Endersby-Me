@@ -6,6 +6,14 @@
       aboutTreehouseSkills = document.querySelector('.about-treehouse-skills'),
       sortedTreehousePoints;
   
+  //Hides no js warnings on load
+  var hideNoJsWarnings = (function(){
+    var warningElement = document.querySelector('.nojs-warning');
+
+    warningElement.style.display = 'none';
+  }()); //Immediately invokes function
+
+
   /*Tests to see if ajax is available then Creates an Ajax request. 
   *Params: url - the api url
   *        type - the type of request (get, post). Default is get
@@ -14,7 +22,6 @@
   function makeRequest(url, type, callback) {
   type = typeof type !== 'undefined' ? type : 'GET';
   var httpRequest;
-
   if (window.XMLHttpRequest) { // Mozilla, Safari, ...
     httpRequest = new XMLHttpRequest();
   } else if (window.ActiveXObject) { // IE
