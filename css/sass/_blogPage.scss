@@ -19,9 +19,9 @@
 }
 .blog header, .single-post .svg-image-header{
 	svg{
-		//height: auto;
+		display: block;
 		max-height: 700px;
-		margin-top: 0;
+		margin: 0 auto;
 	}
 }
 .blog	article, .single-post article{

@@ -1,3 +1,4 @@
+/*jslint browser:true */
 "use strict";
 
 //(function() {
@@ -183,17 +184,59 @@ function getBattlefieldEmblem(battlefield){
 
 // Gets battlefield ajax response and inserts it into the summary div
 function getBattlefieldSummaryData(battlefield){
-  var battlefieldSummaryData = document.querySelector('.about-battlefield-summary'),
-      battlefieldEmblem = battlefieldSummaryData.querySelector('img'),
-      battlefieldUsername = battlefieldSummaryData.querySelector('#battlefieldUserName'),
-      battlefieldRank = battlefieldSummaryData.querySelector('#battlefieldRank'),
-      battlefieldScore = battlefieldSummaryData.querySelector('#battlefieldScore');
+  var battlefieldSummaryData = document.createElement('div'); //This wraps around all elements at the top of the div
+      battlefieldSummaryData.setAttribute('class', 'about-battlefield-summary');
 
- battlefieldEmblem.setAttribute('src', getBattlefieldEmblem(battlefield));
+  var battlefieldEmblem = document.createElement('img');
+      battlefieldEmblem.setAttribute('src', getBattlefieldEmblem(battlefield));
+      battlefieldEmblem.setAttribute('class', 'col-md-4');
+      battlefieldSummaryData.appendChild(battlefieldEmblem);
 
-  battlefieldUsername.textContent = battlefield.player.name;
-  battlefieldRank.textContent = battlefield.player.rank.name;
-  battlefieldScore.getElementsByTagName('span')[0].textContent = formatNumber(battlefield.player.score);
+  var battlefieldSummaryInnerWrapper = document.createElement('div'); //This only wraps around right text
+      battlefieldSummaryInnerWrapper.setAttribute('class', 'col-md-7');
+
+  var battlefieldUsername = document.createElement('p'); //create user name p element
+      battlefieldUsername.setAttribute('id', 'battlefieldUserName');
+      battlefieldUsername.textContent = battlefield.player.name;
+      battlefieldSummaryInnerWrapper.appendChild(battlefieldUsername);
+
+  var battlefieldRank = document.createElement('p'); //Creates rank p element
+      battlefieldRank.setAttribute('id', '#battlefieldRank');
+      battlefieldRank.textContent = battlefield.player.rank.name;
+      battlefieldSummaryInnerWrapper.appendChild(battlefieldRank);
+
+    var battlefieldWorldRank = document.createElement('p'); //Creates world rank p element
+        battlefieldWorldRank.setAttribute('id', 'battlefieldWorldRank');
+        battlefieldWorldRank.textContent = 'World Rank ';
+    var battlefieldWorldRankSpan = document.createElement('span'); //creates world rank element
+        battlefieldWorldRankSpan.textContent = 'Top ' + 5 + "%"; //Hardcoded to avoid flash on ajax return
+        battlefieldWorldRank.appendChild(battlefieldWorldRankSpan);
+        battlefieldSummaryInnerWrapper.insertBefore(battlefieldWorldRank, document.querySelector('#battlefieldScore'));
+
+  //Makes API call
+  makeRequest('http://api.bf4stats.com/api/playerRankings?plat=xone&name=davetherave2010&output=json','POST', function(battlefieldRankings){
+    getBattlefieldWorldRanking(battlefieldRankings); //Calculates percentage
+
+    battlefieldWorldRankSpan.textContent = 'Top ' + getBattlefieldWorldRanking(battlefieldRankings) + "%"; //Updates the value if needed
+
+  });
+
+  var battlefieldScore = document.createElement('p'); //Creates score p element
+      battlefieldScore.setAttribute('id', 'battlefieldScore');
+      battlefieldScore.textContent = 'Score ';
+
+  var battlefieldScoreSpan = document.createElement('span'); //Creates score inner span
+      battlefieldScoreSpan.textContent = formatNumber(battlefield.player.score);
+      
+      battlefieldScore.appendChild(battlefieldScoreSpan); //Adds the span to the p element
+      battlefieldSummaryInnerWrapper.appendChild(battlefieldScore); //Adds the p element to the inner wrapper
+
+  var battlefieldHr = document.createElement('hr'); //Creates a hr element
+      battlefieldSummaryInnerWrapper.appendChild(battlefieldHr);
+
+    battlefieldSummaryData.appendChild(battlefieldSummaryInnerWrapper); //Adds the inner wrapper to the battlefield element next to the img element
+
+  aboutBattlefield.querySelector('.card').insertBefore(battlefieldSummaryData, aboutBattlefield.querySelector('.card .block-footer')); //Adds all top summary data to about battlefield element before the footer
 }
 
 // Gets battlefield ajax response and inserts it into the detailed stats div
@@ -222,7 +265,7 @@ function getBattlefieldDetailedStats(battlefield){
       content : 'Longest Headshot ',
       span: battlefield.stats.longestHeadshot + 'm'
     }
-  } 
+  }; 
   for (var prop in battlefieldElements){
     //console.log(prop + ' ' +  battlefieldElements[prop].content + ' ' + battlefieldElements[prop].span);
     var pElement = document.createElement('p');
@@ -230,7 +273,7 @@ function getBattlefieldDetailedStats(battlefield){
         pElement.textContent = battlefieldElements[prop].content;
 
     var spanElement = document.createElement('span');
-        spanElement.textContent = battlefieldElements[prop].span
+        spanElement.textContent = battlefieldElements[prop].span;
 
     pElement.appendChild(spanElement);
 
@@ -262,7 +305,7 @@ function getBattlefieldTimePlayed(battlefield){
   //Math truncation polyfill for browsers that don't support it
   Math.trunc = Math.trunc || function(x) { 
     return x < 0 ? Math.ceil(x) : Math.floor(x);
-  }
+  };
 
   var battlefieldTotalSeconds = battlefield.player.timePlayed,
       hours = Math.trunc(battlefieldTotalSeconds / 3600),
@@ -284,14 +327,12 @@ function getBattlefieldShotsMissed(battlefield){
 }
 //Calculates rank percentage and inputs into dom
 function getBattlefieldWorldRanking(battlefieldRankings){
-  var battlefieldWorldRank = document.querySelector('#battlefieldWorldRank span');
 
   var totalUserCount = battlefieldRankings.rankings[0].count,
       myRank = battlefieldRankings.rankings[0].rank,
       percentageRank = Math.round((myRank/totalUserCount) * 100);
 
-  battlefieldWorldRank.textContent = 'Top ' + percentageRank + "%";
-  //return percentageRank;
+  return percentageRank;
 }
 
 
@@ -312,7 +353,4 @@ makeRequest('//teamtreehouse.com/davidendersby.json', 'GET', function(treehouseD
   makeAjaxVisible(document.querySelector('.about-battlefield'));
 });
 
-makeRequest('http://api.bf4stats.com/api/playerRankings?plat=xone&name=davetherave2010&output=json','POST', function(battlefieldRankings){
-  getBattlefieldWorldRanking(battlefieldRankings);
-});
 //})();

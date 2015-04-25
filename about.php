@@ -79,17 +79,6 @@
     <div class="card">
       <h2>Battlefield 4</h2>
       <img class="loading" src="<?php echo get_template_directory_uri();?>/img/loading.gif" alt="Loading">
-
-      <div class="about-battlefield-summary">
-        <img class="col-sm-4" src="http://www.bf4stats.com/img/bf4/ranks/r111.png" alt="Rank 111 - Brigadier General II emblem">
-        <div class="col-sm-7 about-battlefield-summary">
-          <a href="http://battlelog.battlefield.com/bf4/user/Davetherave2014" id="battlefieldUserName">Davetherave2010</a>
-          <p id="battlefieldRank">Brigadier General II</p>
-          <p id="battlefieldWorldRank">World Rank <span>Top 5%</span></p>
-          <p id="battlefieldScore">Score <span>10,748,637</span></p>
-          <hr>
-        </div>
-      </div>
       <div class="block-footer"><p>Data taken from <a href="http://battlelog.battlefield.com/bf4/soldier/Davetherave2010/stats/171303020/xboxone/" target="_blank">David Endersby's Battlefield 4 profile</a> using the <a href="http://bf4stats.com/xone/Davetherave2010" target="_blank">BF4stats API</a></p>
       </div>
     </div>
