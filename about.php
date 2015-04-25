@@ -67,18 +67,15 @@
     </div>
   </section>
 
-  <section class="col-md-8 about-treehouse">
+  <section class="col-md-8 ajax about-treehouse">
     <div class="card">
       <h2>Treehouse</h2>
-      <p>Completed <span class="completed-courses">227</span> courses and earned <span class="total-points">15,000</span> Points on Treehouse</p>
-      <ul class="about-treehouse-skills">
-        <!-- Style like treehouse Profile page -->
-      </ul>
-      <!-- Add Most Recent Badges -->
+      <img class="loading" src="<?php echo get_template_directory_uri();?>/img/loading.gif" alt="Loading">
+      
     </div>
   </section>
 
-  <section class="col-md-8 about-battlefield">
+  <section class="col-md-8 ajax about-battlefield">
     <div class="card">
       <h2>Battlefield 4</h2>
       <div class="col-md-12 about-battlefield-summary">

@@ -3,16 +3,18 @@
 //(function() {
     var treehouse,
       aboutTreehouse = document.querySelector('.about-treehouse'),
-      aboutTreehouseSkills = document.querySelector('.about-treehouse-skills'),
       sortedTreehousePoints;
   
   //Hides no js warnings on load
-  var hideNoJsWarnings = (function(){
+  var hasJs = (function(){
     var warningElement = document.querySelector('.nojs-warning');
-
     warningElement.style.display = 'none';
-  }()); //Immediately invokes function
 
+    var ajaxElements = document.getElementsByClassName('ajax');
+    for (var i = 0; i <= ajaxElements.length -1; i++) {
+      ajaxElements[i].style.display = 'block';
+    }
+  }()); //Immediately invokes function
 
   /*Tests to see if ajax is available then Creates an Ajax request. 
   *Params: url - the api url
@@ -60,40 +62,6 @@
   //httpRequest.setRequestHeader('Content-Type', 'application/xml');
   httpRequest.send();
 }
-
- 
-//Loops though the treehouse points array and creates li elements that replace the non js fallback
-function getPoints(){
-  deleteListItems('about-treehouse-skills');
-  for(var i in sortedTreehousePoints){
-    //console.log(prop + " = " + treehouse.points[prop]);
-    if (sortedTreehousePoints[i].value >= 50 && sortedTreehousePoints[i].key !== "total") {
-      var bullet = document.createElement('span');
-          bullet.appendChild(document.createTextNode('•'));
-          bullet.setAttribute('class', 'bullet');
-
-      var points = document.createElement('p');
-          points.appendChild(document.createTextNode(formatNumber(sortedTreehousePoints[i].value) + " pts"));
-          
-
-      var listItem = document.createElement('li');
-          listItem.appendChild(bullet);
-          listItem.appendChild(document.createTextNode(sortedTreehousePoints[i].key));
-          listItem.appendChild(points);
-          listItem.setAttribute('class', sortedTreehousePoints[i].key.toLowerCase());
-
-      aboutTreehouseSkills.appendChild(listItem);
-    }
-  }
-}
-//Gets the total number of treehouse points and updates the span tag
-function getTotalPoints(treehouse){
-  var totalTreehousePoints = formatNumber(treehouse.points.total),
-      totalCoursesCompleted = treehouse.badges.length;
-
-  aboutTreehouse.getElementsByClassName('completed-courses')[0].innerHTML = totalCoursesCompleted;   
-  aboutTreehouse.getElementsByClassName('total-points')[0].innerHTML = totalTreehousePoints;
-}
 /*Formats numbers by adding thousand commas
  *Params: num - Number to format
  */
@@ -128,6 +96,59 @@ function sortObject(obj, sortBy) {
   //arr.sort(function(a, b) { a.value.toLowerCase().localeCompare(b.value.toLowerCase()); }); //use this to sort as strings
   return arr; // returns array
 }
+function makeAjaxVisible(element){
+  //element.style.display = 'block'; // Shows the element
+  element.classList.remove('ajax'); //Removes only the ajax class
+  element.classList.add('ajax-loaded'); //Adds ajax-loaded class to the list
+}
+
+//Loops though the treehouse points array and creates li elements that replace the non js fallback
+function getPoints(){
+  var aboutTreehouseSkills = document.createElement('ul'); //Creates the list
+      aboutTreehouseSkills.setAttribute('class', 'about-treehouse-skills'); //Adds the class
+  for(var i in sortedTreehousePoints){
+    //console.log(prop + " = " + treehouse.points[prop]);
+    if (sortedTreehousePoints[i].value >= 50 && sortedTreehousePoints[i].key !== "total") {
+      var bullet = document.createElement('span'); //creates the bullet points span
+          bullet.appendChild(document.createTextNode('•'));
+          bullet.setAttribute('class', 'bullet');
+
+      var points = document.createElement('p'); //Creates the points p element
+          points.appendChild(document.createTextNode(formatNumber(sortedTreehousePoints[i].value) + " pts"));
+          
+
+      var listItem = document.createElement('li'); //creates the li element
+          listItem.appendChild(bullet);//adds the bullet point
+          listItem.appendChild(document.createTextNode(sortedTreehousePoints[i].key));//Adds the skill name
+          listItem.appendChild(points); //Adds the points element with value
+          listItem.setAttribute('class', sortedTreehousePoints[i].key.toLowerCase()); //Adds the class name
+
+      aboutTreehouseSkills.appendChild(listItem); //Appends the list element to the list
+    }
+  }
+  aboutTreehouse.querySelector('.card').appendChild(aboutTreehouseSkills);//adds the list to the about treehouse element
+}
+//Gets the total number of treehouse points and updates the span tag
+function getTotalPoints(treehouse){
+  var totalTreehousePoints = document.createElement('span');
+      totalTreehousePoints.setAttribute('class', 'total-points');
+      totalTreehousePoints.textContent = formatNumber(treehouse.points.total);
+
+  
+  var totalCoursesCompleted = document.createElement('span');
+      totalCoursesCompleted.setAttribute('class', 'completed-courses');
+      totalCoursesCompleted.textContent = treehouse.badges.length;
+
+  var totalTreehouseString = document.createElement('p');
+      totalTreehouseString.innerHTML = 'Completed ';
+      totalTreehouseString.appendChild(totalCoursesCompleted);
+      totalTreehouseString.innerHTML += ' courses and earned ';  
+      totalTreehouseString.appendChild(totalTreehousePoints);
+      totalTreehouseString.innerHTML += ' points on Treehouse.';
+
+  aboutTreehouse.querySelector('.card').appendChild(totalTreehouseString);
+
+}
 // Gets treehouse badge data from ajax response and inserts it into the dom
 function getTreehouseBadges(treehouse){
   var treehouseBadges = treehouse.badges,
@@ -149,6 +170,8 @@ function getTreehouseBadges(treehouse){
   }
   aboutTreehouse.querySelector('.card').insertBefore(badgesList, aboutTreehouse.getElementsByTagName('p')[0]);
 }
+
+
 //A function that returns the url for the player emblem
 function getBattlefieldEmblem(battlefield){
   var battlefieldEmblemImage = battlefield.player.rank.imgLarge;
@@ -229,6 +252,8 @@ function getBattlefieldWorldRanking(battlefieldRankings){
   battlefieldWorldRank.textContent = 'Top ' + percentageRank + "%";
   //return percentageRank;
 }
+
+
 //This makes the ajax request and then allows you to say what you want to do with the response.
 makeRequest('//teamtreehouse.com/davidendersby.json', 'GET', function(treehouseData){
   //console.log(treehouseData);
@@ -236,12 +261,14 @@ makeRequest('//teamtreehouse.com/davidendersby.json', 'GET', function(treehouseD
   getTotalPoints(treehouseData);
   getPoints();
   getTreehouseBadges(treehouseData);
+  makeAjaxVisible(document.querySelector('.about-treehouse'));
 });
 
  makeRequest('http://api.bf4stats.com/api/playerInfo?plat=xone&name=davetherave2010&output=json','POST', function(battlefieldData){
   //console.log(battlefieldData);
   getBattlefieldSummaryData(battlefieldData);
   getBattlefieldDetailedStats(battlefieldData);
+  makeAjaxVisible(document.querySelector('.about-battlefield'));
 });
 
 makeRequest('http://api.bf4stats.com/api/playerRankings?plat=xone&name=davetherave2010&output=json','POST', function(battlefieldRankings){

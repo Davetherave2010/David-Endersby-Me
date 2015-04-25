@@ -11,7 +11,20 @@
 	padding: 1em;
 	margin: 0 0.325em;
 }
-
+.ajax{
+	display: none;
+}
+.ajax-loaded{
+	max-height: 100em !important;
+	.loading{ //Once ajax has loaded, any loading elements are hidden
+		display: none;
+	}
+} 
+.loading{
+	display: block;
+	margin: 1em auto 0.5em;
+	opacity: 0.5;
+}
 .about-intro{
 	margin: 1em 0;
 	&-title{
@@ -63,8 +76,15 @@
 	}
 }
 .about-treehouse{
+	margin-bottom: 1em;
 	padding-bottom: 2em;
 	overflow: hidden;
+	max-height: 7.5em;
+
+	-webkit-transition: max-height 1s;
+	-moz-transition: max-height 1s;
+	-ms-transition: max-height 1s;
+	transition: max-height 1s;
 	h2{
 		@extend %about-section-titles;
 	}
@@ -77,10 +97,10 @@
 		font-style: italic;
 	}
 	&-skills{
-		padding: 0;
 		width: 95%;
-		list-style: none;
 		margin: 1em auto;
+		padding: 0;
+		list-style: none;
 		li{
 			display: inline-block;
 			vertical-align: top;
@@ -136,8 +156,8 @@
   	img{ width: 100%; }
 	}
 }
+
 .about-battlefield{
-	margin-top: 1em;
 	h2{
 		@extend %about-section-titles;
 		margin-bottom: 1em;
