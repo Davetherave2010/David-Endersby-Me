@@ -196,27 +196,31 @@
 		span{
 			font-weight: 300;
 		}
-		#battlefieldTimePlayed, #battlefieldAccuracy{
-			font-weight: 300;
-		}
-		#battlefieldTimePlayed span{
+		#battlefieldTimePlayed{
 			display: block;
 			margin-bottom: 0.1em;
 			font-size: 1.1em;
 			font-weight: bold;
+			span{
+				display: block;
+				font-weight: 300;
+				margin: 0.1em 0 0.5em;
+			}
 		}
 		.battlefield-accuracy{
-			display: inline-block;
-			font-weight: 300;
-			text-align: left;
-			margin: 0.1em 0;
-		}
-		span.battlefield-accuracy{
-			margin-right: 5px;
-			font-weight: bold;
-			line-height: 60px;
-		  font-size: 2.5em;
-		}
+			span{
+				margin-right: 5px;
+				font-weight: bold;
+				line-height: 60px;
+			  font-size: 2.5em;
+			}
+			p{
+				display: inline-block;
+				font-weight: 300;
+				text-align: left;
+				margin: 0.1em 0;
+			}
+		}	
 	}
 	.block-footer{
 		text-align: center;

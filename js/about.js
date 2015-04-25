@@ -3,7 +3,8 @@
 //(function() {
     var treehouse,
       aboutTreehouse = document.querySelector('.about-treehouse'),
-      sortedTreehousePoints;
+      sortedTreehousePoints,
+      aboutBattlefield =  document.querySelector('.about-battlefield');
   
   //Hides no js warnings on load
   var hasJs = (function(){
@@ -179,6 +180,7 @@ function getBattlefieldEmblem(battlefield){
   battlefieldEmblemImage = '//www.bf4stats.com/img/' + battlefieldEmblemImage;
   return battlefieldEmblemImage;
 }
+
 // Gets battlefield ajax response and inserts it into the summary div
 function getBattlefieldSummaryData(battlefield){
   var battlefieldSummaryData = document.querySelector('.about-battlefield-summary'),
@@ -193,31 +195,70 @@ function getBattlefieldSummaryData(battlefield){
   battlefieldRank.textContent = battlefield.player.rank.name;
   battlefieldScore.getElementsByTagName('span')[0].textContent = formatNumber(battlefield.player.score);
 }
+
 // Gets battlefield ajax response and inserts it into the detailed stats div
 function getBattlefieldDetailedStats(battlefield){
-  var battlefieldDetailedStats = document.querySelector('.about-battlefield-detailed-stats'),
-      battlefieldTimeSpentPlaying = battlefieldDetailedStats.querySelector('#battlefieldTimePlayed'),
-      battlefieldKills = battlefieldDetailedStats.querySelector('#battlefieldKills'),
-      battlefieldDeaths = battlefieldDetailedStats.querySelector('#battlefieldDeaths'),
-      battlefieldShotsFired = battlefieldDetailedStats.querySelector('#battlefieldShotsFired'),
-      battlefieldLongestHeadshot = battlefieldDetailedStats.querySelector('#battlefieldLongestHeadshot'),
-      battlefieldAccuracy = document.querySelector('.about-battlefield-detailed-stats span.battlefield-accuracy');
+  var battlefieldDetailedStats = document.createElement('div');
+      battlefieldDetailedStats.setAttribute('class', 'about-battlefield-detailed-stats');
+
+  var battlefieldElements = {
+    battlefieldTimePlayed : {
+      content : getBattlefieldTimePlayed(battlefield),
+      span: 'Spent Playing'
+    },
+    battlefieldKills : {
+      content : 'Kills ',
+      span: formatNumber(battlefield.stats.kills)
+    },
+    battlefieldDeaths : {
+      content : 'Deaths ',
+      span: formatNumber(battlefield.stats.deaths)
+    },
+    battlefieldShotsFired : {
+      content : 'Bullets Fired ',
+      span: formatNumber(battlefield.stats.shotsFired)
+    },
+    battlefieldLongestHeadshot : {
+      content : 'Longest Headshot ',
+      span: battlefield.stats.longestHeadshot + 'm'
+    }
+  } 
+  for (var prop in battlefieldElements){
+    //console.log(prop + ' ' +  battlefieldElements[prop].content + ' ' + battlefieldElements[prop].span);
+    var pElement = document.createElement('p');
+        pElement.setAttribute('id', prop);
+        pElement.textContent = battlefieldElements[prop].content;
+
+    var spanElement = document.createElement('span');
+        spanElement.textContent = battlefieldElements[prop].span
+
+    pElement.appendChild(spanElement);
+
+    battlefieldDetailedStats.appendChild(pElement);
+  }
 
 
-      battlefieldTimeSpentPlaying.getElementsByTagName('span')[0].textContent = getBattlefieldTimePlayed(battlefield);
-      battlefieldKills.getElementsByTagName('span')[0].textContent = formatNumber(battlefield.stats.kills);
-      battlefieldDeaths.getElementsByTagName('span')[0].textContent = formatNumber(battlefield.stats.deaths);
-      battlefieldShotsFired.getElementsByTagName('span')[0].textContent = formatNumber(battlefield.stats.shotsFired);
-      battlefieldLongestHeadshot.getElementsByTagName('span')[0].textContent = battlefield.stats.longestHeadshot + 'm';
-      battlefieldAccuracy.textContent = getBattlefieldShotsMissed(battlefield);
+  var battlefieldAccuracy = document.createElement('div');
+      battlefieldAccuracy.setAttribute('class', 'battlefield-accuracy');
+
+  var battlefieldAccuracySpan = document.createElement('span');
+      battlefieldAccuracySpan.textContent = getBattlefieldShotsMissed(battlefield);
+      battlefieldAccuracy.appendChild(battlefieldAccuracySpan);
+
+  var battlefieldAccuracyP = document.createElement('p');
+      battlefieldAccuracyP.innerHTML = ' of bullets fired <br> fail to hit anyone';
+      battlefieldAccuracy.appendChild(battlefieldAccuracyP);
+
+  battlefieldDetailedStats.appendChild(battlefieldAccuracy);
+
+  aboutBattlefield.querySelector('.card').insertBefore(battlefieldDetailedStats, aboutBattlefield.querySelector('.card .block-footer'));
+
 }
 /* Calculates how long I have been playing.
  * @Param battlefield - json ajax response 
  * @Returns formatted string 
 */ 
 function getBattlefieldTimePlayed(battlefield){
-  var battlefieldTimeSpentPlaying = document.querySelector('.about-battlefield-detailed-stats #battlefieldTimePlayed');
-
   //Math truncation polyfill for browsers that don't support it
   Math.trunc = Math.trunc || function(x) { 
     return x < 0 ? Math.ceil(x) : Math.floor(x);
