@@ -11,7 +11,10 @@
         <h1>About</h1>
         <p>A little bit about me</p>
       </div>
-      <p>I'm a 24 year old, London based web design/developer currently working for Universal Music. I've got absolutally no formal qualifications in what I do and I'm completely self taught, having spent many evenings and weekends working my way through Treehouse. I do absolutally love Web development though. I'm a propper little (okay not so little) Nerd. It wasn't always this way. The original plan was to get a job in the geography world, probably involving me standing out in the middle of a field, in the rain, taking soil samples. Then I caught the web dev bug and within 2 years was working for the biggest music companies in the world. It hasn't been plain sailing but its totally worth it and I'm not stopping here. I'm currently spending my evenings and weekends learning new skills like Angular and Node - Yes the guys and girls at work think its wierd 'working' at the weekends, but I'm not too bothered.</p>
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <?php the_content(); ?>
+      <?php endwhile; ?>
+    <?php endif; ?>
     </div>
   </section>
 
@@ -71,7 +74,7 @@
     <div class="card">
       <h2>Treehouse</h2>
       <img class="loading" src="<?php echo get_template_directory_uri();?>/img/loading.gif" alt="Loading">
-
+      <div class="block-footer">Data skillfully swiped from <a href="//teamtreehouse.com/davidendersby">my Treehouse profile</a> using the Treehouse API</div>
     </div>
   </section>
 

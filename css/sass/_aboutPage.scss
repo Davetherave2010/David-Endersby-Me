@@ -25,6 +25,10 @@
 	margin: 1em auto 0.5em;
 	opacity: 0.5;
 }
+.block-footer{
+	text-align: center;
+}
+
 .about-intro{
 	margin: 1em 0;
 	&-title{
@@ -80,7 +84,7 @@
 	margin-bottom: 1em;
 	padding-bottom: 2em;
 	overflow: hidden;
-	max-height: 7.5em;
+	max-height: 9.25em;
 
 	-webkit-transition: max-height 1s;
 	-moz-transition: max-height 1s;
@@ -232,5 +236,6 @@
 	}
 	.block-footer{
 		text-align: center;
+		p{ margin: 0; }
 	}
 }

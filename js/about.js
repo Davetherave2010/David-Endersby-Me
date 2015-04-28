@@ -128,7 +128,7 @@ function getPoints(){
       aboutTreehouseSkills.appendChild(listItem); //Appends the list element to the list
     }
   }
-  aboutTreehouse.querySelector('.card').appendChild(aboutTreehouseSkills);//adds the list to the about treehouse element
+  aboutTreehouse.querySelector('.card').insertBefore(aboutTreehouseSkills, aboutTreehouse.querySelector('.block-footer'));//adds the list to the about treehouse element
 }
 //Gets the total number of treehouse points and updates the span tag
 function getTotalPoints(treehouse){
@@ -148,7 +148,7 @@ function getTotalPoints(treehouse){
       totalTreehouseString.appendChild(totalTreehousePoints);
       totalTreehouseString.innerHTML += ' points on Treehouse.';
 
-  aboutTreehouse.querySelector('.card').appendChild(totalTreehouseString);
+  aboutTreehouse.querySelector('.card').insertBefore(totalTreehouseString, aboutTreehouse.querySelector('.block-footer'));
 
 }
 // Gets treehouse badge data from ajax response and inserts it into the dom
