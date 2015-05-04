@@ -1,8 +1,10 @@
 //All of your fonts go in here
 
 //Probs import from typekit
-$f-body: "Helvetica Neue",Helvetica,Arial,sans-serif; //Inherit from other body styling
+// $f-body: "Helvetica Neue",Helvetica,Arial,sans-serif; //Inherit from other body styling
+$f-body: 'proxima-nova';
 $f-heading: "adelle",sans-serif;
+$f-other-heading: "aktiv-grotesk-std",sans-serif;
 
 h1, h2, h3, h4, h5, h6{
 	font-family: $f-heading;

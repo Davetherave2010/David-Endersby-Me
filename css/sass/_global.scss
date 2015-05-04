@@ -1,7 +1,7 @@
 $body-font-size: 17px;
 html{height: 100%;}
 body{
-	//font-family: $f-body;
+	font-family: $f-body;
 	position: relative;
 	min-height: 100%;
 	font-size: $body-font-size;
@@ -63,14 +63,14 @@ header{
 		margin: 11.22em 0;
 		text-align: center;
 		color: $c-white;
-		h2{
+		h2, ul{
 			font-family: $f-body;
 			font-size: 1.8em;
 			font-weight: 100;
 			margin: 0;
 		}
 		h1{
-			font-family: $f-body;
+			font-family: $f-other-heading;
 			font-size: 3.75em;
 			font-weight: 700;
 			margin: 0;
