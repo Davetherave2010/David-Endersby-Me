@@ -12,9 +12,9 @@
     <div class="col-md-6 banner-text">
       <h1>David Endersby</h1>
       <ul>
+        <li>Web Developer</li>
         <li>Geographer</li>
         <li>Pizza lover</li>
-        <li>Nerd</li>
       </ul>
     </div>
   </div>
@@ -26,27 +26,21 @@
         <h2>David Endersby<wbr> MSc BSc(Hons) FGS</h2>
     </div>
     <div class="col-md-10 col-md-offset-1">
-        <p>Hey. My name is David Endersby, I'm 24 and I am a Web Designer/Developer. I have a Masters degree in Geological and Environmental Hazards and a Batchelors of Science degree in Geography. I'm also a Fellow of the British Geological Society.</p>
+        <p> Hello, I am a Web design developer based in london with a background in geography and geological hazards. I currently spend my daytime working for Universal Music UK and the rest of my time doing personal projects based around my web dev skill set. I'm actively persuing pure javascript and looking to learn Node and Angular to be able to build web applications.</p>
+
+
+        <p>Did I mention that I'm also a Fellow of the British Geological Society.</p>
     </div>
   </section>
   <hr>
 </div>
 
 <div class="container mainContent content-wrapper">
-  <div class="row">
-    <svg class="col-md-4 hidden-xs hidden-sm frontPage-icons" width="100%" height="280">
-      <image xlink:href="<?php bloginfo('template_directory'); ?>/img/idea.svg" src="<?php bloginfo('template_directory'); ?>/img/idea.png" width="100%" height="280" class="img-responsive" alt="An illuminated light bulb illustration with 'idea' as the filament"/>
-    </svg>
-    <section class="col-md-8 padding-right-8pc">
-        <h2>About this site</h2>
-        <p>The idea behind this website is for a place where I can exercise my creative online spark, using lots of different types of media based around the things I enjoy and the things I hope others will enjoy. I've got loads of ideas - From a music page, with my favourite tunes on, to a page dedicated to Dave the Rave, my alter-ego. The end product will be a series of pages that will help you answer 'Who is that David Endersby?' and show off what I am capable of creatively.</p>
-    </section>
-  </div>
 
   <div class="row">
     <section class="col-md-8 padding-left-8pc">
       <h2>Blog</h2>
-      <p>My blog is a space for me to talk about interesting things that are going on in my life and things that I'm interested in around the world - like news and events. It contains some of my experiences and what I have been up to, for example: Web conferences, and what I've learnt from them. If I find or hear of something thats interesting then I'll whack a link up so others can check it out too.</p>
+      <p>My blog is a space for me to talk about interesting things that are going on in my life and things that I'm interested in around the world - like news and events. It contains some of my experiences and what I have been up to, for example: Web conferences, and what I've learnt from them.Its alto a place where I post relese notes for projects that I've worked on, showing new features and fixed bugs. Its all there.</p>
       <a href="<?php the_permalink('blog'); ?>">Read my Blog &rarr;</a>
     </section>        
     <svg class="frontPage-icons col-md-4 hidden-xs hidden-sm" width="100%" height="280">
@@ -60,7 +54,7 @@
     </svg>
     <section class="col-md-8 padding-right-8pc">
       <h2>About Me</h2>
-      <p>I have collected together some of the best things I have done, combined them with a sprinkle of education, and a dash of work history to create a page that tells you whatever you want to know. The idea behind this page was to create an 'online cv' to give you abit of information on my background and stuff that I have achieved. Its like a snazzier version of my LinkedIn.</p>
+      <p>The about page shows some of my achivements using data gathered from the furthest coners of the internet. It shows my Treehouse score and what I'm currently learning as well as how much time I've spent (or wasted) on Battlefield. Top 5% worldwide though. Just saying.</p>
       <a href="about/">Find out more &rarr;</a>
     </section>
   </div>

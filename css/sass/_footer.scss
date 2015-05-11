@@ -10,7 +10,36 @@ footer{
 	}
 	p{
 		font-size: 0.9em;
-		margin: 1em 0;
+		margin: 0 0 1em;
 		color: $c-white;
 	}
+
+	.facebook{
+		background-position: 0 -133px;
+		.svg &{
+			background: url('../../img/footer-facebook.svg') center center no-repeat;
+			background-size: cover;
+		}
+	}
+	.twitter{
+		background-position: 0 -170px;
+		.svg &{
+			background: url('../../img/footer-twitter.svg') center center no-repeat;
+			background-size: cover;
+		}
+	}
+	.github{
+		background-position: 0 -32px;
+		.svg &{
+			background: url('../../img/footer-github.svg') center center no-repeat;
+			background-size: cover;
+		}
+	}
+}
+.footer-icons{
+	display: inline-block;
+	height: 37px;
+	width: 37px;
+	margin: 0.75em 0.35em 0.25em;
+	background: url('../../img/de-wp-s665924fcba.png') no-repeat;
 }
