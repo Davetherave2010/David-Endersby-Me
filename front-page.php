@@ -54,7 +54,7 @@
     </svg>
     <section class="col-md-8 padding-right-8pc">
       <h2>About Me</h2>
-      <p>The about page shows some of my achivements using data gathered from the furthest coners of the internet. It shows my Treehouse score and what I'm currently learning as well as how much time I've spent (or wasted) on Battlefield. Top 5% worldwide though. Just saying.</p>
+      <p>The about page shows some of my achivements using data gathered from the furthest coners of the internet. It shows my Treehouse score and what I'm currently learning as well as how much time I've spent (or wasted) on Battlefield. Top 5% worldwide though, Just saying.</p>
       <a href="about/">Find out more &rarr;</a>
     </section>
   </div>
