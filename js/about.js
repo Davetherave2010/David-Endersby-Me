@@ -205,7 +205,7 @@
         battlefieldSummaryData.appendChild(battlefieldEmblem);
 
     var battlefieldSummaryInnerWrapper = document.createElement('div'); //This only wraps around right text
-        battlefieldSummaryInnerWrapper.setAttribute('class', 'col-md-7');
+        battlefieldSummaryInnerWrapper.setAttribute('class', 'col-md-6');
 
     var battlefieldUsername = document.createElement('p'); //create user name p element
         battlefieldUsername.setAttribute('id', 'battlefieldUserName');

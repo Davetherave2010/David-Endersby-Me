@@ -1,8 +1,30 @@
 //For all Media queries
+@media(min-width: 600px){
+  .about-treehouse-badges li{
+    width: 20%;
+    &:nth-child(n+4){ //Shows all 5 badges
+      display: inline-block;
+    }
+    &:hover{
+      top: -20px;
+      -webkit-box-reflect: below 30px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent), to(rgba(255,255,255,0.2)));
+    }
+  }
+}
 
 @media(min-width: 700px){
   .blog header, .single-post .svg-image-header{
     margin-top: -150px;
+  }
+  .about-treehouse-badges li{
+    width: 20%;
+    &:nth-child(n+4){ //Shows all 5 badges
+      display: inline-block;
+    }
+    &:hover{
+      top: -20px;
+      -webkit-box-reflect: below 30px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent), to(rgba(255,255,255,0.2)));
+    }
   }
 }
 
