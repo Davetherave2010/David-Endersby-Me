@@ -9,6 +9,10 @@
 				background: url(../img/posted.png) no-repeat 0 0;
 				background-size: 1.2em !important;
 				padding-left: 35px;
+				cursor: inherit;
+				&:before{
+					top: 0;
+				}
 			}
 		}
 	}

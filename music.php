@@ -67,11 +67,8 @@ $the_query = new WP_Query($args); ?>
       </div>
     </div>
     <div class="col-sm-12 col-md-8 col-md-offset-2 vid_info" itemprop="about">
-      <a href="<?php the_permalink();?>">
-        <h3 itemscope itemtype="http://schema.org/MusicRecording"><span itemprop="byArtist"><?php the_field('artist1'); ?></span></h3></a>
-      <a href="<?php the_permalink();?>">
+        <h3 itemscope itemtype="http://schema.org/MusicRecording"><span itemprop="byArtist"><?php the_field('artist1'); ?></span></h3>
         <h3 itemscope itemtype="http://schema.org/Thing"><span itemprop="name"><?php the_field('title1'); ?></span></h3>
-      </a> 
         <?php     
         date_default_timezone_set('UTC');
 
@@ -88,7 +85,7 @@ $the_query = new WP_Query($args); ?>
             $link1 = get_field('beatport_url1');
             if ($link1 !== "//www.beatport.com/release/") {
               #you know the url
-              echo "<a href=$link1><h3><span itemprop='datePublished'>Released on <time datetime='" . $date2->format('d-m-y') . "'>" . $date2->format('F jS, Y') . "</time>" . "</span></h3></a>";
+              echo "<h3><span itemprop='datePublished'>Released on <time datetime='" . $date2->format('d-m-y') . "'>" . $date2->format('F jS, Y') . "</time>" . "</span></h3>";
             }else{
               #you don't know the url
               echo "<h3><span itemprop='datePublished'>Released on <time datetime='" . $date2->format('d-m-y') . "'>" . $date2->format('F jS, Y') . "</time></span><h3>";
@@ -116,11 +113,8 @@ $the_query = new WP_Query($args); ?>
           </div>
 
           <div class="col-sm-12 vid_info" itemprop="about">
-            <a href="<?php the_permalink();?>">
-              <h3 itemscope itemtype="http://schema.org/MusicRecording"><span itemprop="byArtist"><?php the_field('artist1'); ?></span></h3></a>
-            <a href="<?php the_permalink();?>">
+              <h3 itemscope itemtype="http://schema.org/MusicRecording"><span itemprop="byArtist"><?php the_field('artist1'); ?></span></h3>
               <h3 itemscope itemtype="http://schema.org/Thing"><span itemprop="name"><?php the_field('title1'); ?></span></h3>
-            </a> 
               <?php     
               date_default_timezone_set('UTC');
 
@@ -137,7 +131,7 @@ $the_query = new WP_Query($args); ?>
                   $link1 = get_field('beatport_url1');
                   if ($link1 !== "//www.beatport.com/release/") {
                     #you know the url
-                    echo "<a href=$link1><h3> <span itemprop='datePublished'>Released on <time datetime='" . $date2->format('d-m-y') . "'>" . $date2->format('F jS, Y') . "</time>" . "</span></h3></a>";
+                    echo "<h3> <span itemprop='datePublished'>Released on <time datetime='" . $date2->format('d-m-y') . "'>" . $date2->format('F jS, Y') . "</time>" . "</span></h3>";
                   }else{
                     #you don't know the url
                     echo "<h3><span itemprop='datePublished'>Released on <time datetime='" . $date2->format('d-m-y') . "'>" . $date2->format('F jS, Y') . "</span></time><h3>";
@@ -181,7 +175,7 @@ $the_query = new WP_Query($args); ?>
                   $link2 = get_field('beatport_url2');
                   if ($link2 !== "//www.beatport.com/release/") {
                     #you know the url
-                    echo "<a href=$link1><h3><span itemprop='datePublished'>Released on <time datetime='" . $date3->format('d-m-y') . "'>" . $date3->format('F jS, Y') . "</time>" . "</span></h3></a>";
+                    echo "<h3><span itemprop='datePublished'>Released on <time datetime='" . $date3->format('d-m-y') . "'>" . $date3->format('F jS, Y') . "</time>" . "</span></h3>";
                   }else{
                     #you don't know the url
                     echo "<h3><span itemprop='datePublished'>Released on <time datetime='" . $date2->format('d-m-y') . "'>" . $date3->format('F jS, Y') . "</span></time><h3>";

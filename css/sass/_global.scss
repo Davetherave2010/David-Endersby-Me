@@ -97,12 +97,14 @@ header{
 	margin-top: 1.5em;
 }
 .social{
+	position: relative;
 	text-align: center;
 	width: 100%;
 	margin: 1em 0;
 	#twitter-widget-0{
-		position: relative;
-		top: 8px;
+		position: absolute !important;
+		bottom: 0;
+		margin: 0 0.25em;
 	}
 }
 .admin{

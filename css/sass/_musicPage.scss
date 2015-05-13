@@ -217,21 +217,35 @@
 			color: #EE4036;
 		}
 	}
-	a span, span{
+	span{
+		position: relative;
 		background-size: 1em;
-		padding-left: 40px;
+		padding-left: 1.6em;
+		cursor: default;
+	}
+	span:before{
+		content: "";
+		height: 1em;
+		width: 1em;
+		position: absolute;
+		//top: 0;
+		left: 5px;
+		
 	}
 	//Applies artist icon to music page info
-	a:nth-child(1) span{
-		background: url('../../img/artist.png') no-repeat 0 -1px;
+	h3:nth-child(1) span:before{
+		background: url('../../img/artist.png') 0 -1px no-repeat;
+		background-size: cover;
 	}
 	//Applies cd icon to music page info
-	a:nth-child(2) span{
-		background: url('../../img/track.png') no-repeat 0 -1px;
+	h3:nth-child(2) span:before{
+		background: url('../../img/track.png') 0 -1px no-repeat;
+		background-size: cover;
 	}
 	//Applies calendar icon to music page info
-	a:nth-child(3) span, h3:nth-child(3) span{
-		background: url('../../img/posted.png') no-repeat 0 0;
+	h3:nth-child(3) span:before{
+		background: url('../../img/posted.png') 0 0 no-repeat;
+		background-size: cover;
 	}
 
 	//This Forces the time tag to go to the next line but only on small screens
@@ -247,20 +261,21 @@
 		padding-bottom: 0.75em;
 	} 
 }
-.musicBlogRow h4{
-	color: darkgrey;
-	font-size: 1em;
-	padding-top: 1em;
-	padding-right: 0;
-	text-align: center;
-	cursor: default;
-	clear: both;
-	// @media(min-width: 991px){
-	// 	text-align: right;
-	// }
-	
-}
-.musicBlogRow h3{
-	line-height: 1.15em;
-	margin: 0.25em 0;
+.musicBlogRow{
+	h3{
+		margin: 0.25em 0;
+		font-size: 1.2em;
+		font-family: inherit;
+		line-height: 1.15em;
+		
+	}
+	 h4{
+	 	clear: both;
+	 	padding: 1em 0 0;
+		font-size: 1em;
+		color: darkgrey;
+		text-align: center;
+		cursor: default;
+
+	}
 }
