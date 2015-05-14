@@ -7,8 +7,8 @@ body{
 	font-size: $body-font-size;
 	background-color: $c-white;
 	line-height: 1.6em;
-	font-weight: 300;
-	-webkit-font-smoothing: subpixel-antialiased;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
 }
 
 .ie-warning {background:#C60F13; margin-top:40px; padding:10px;}
