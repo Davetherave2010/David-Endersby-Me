@@ -61,7 +61,7 @@ $the_query = new WP_Query($args); ?>
   <div class="row musicBlogRow">
     <div class="col-md-8 col-md-offset-2 oneVideo">
       <a href="<?php the_permalink();?>">
-          <div class="video_cutout" style="background: url('//img.youtube.com/vi/<? the_field('youtube_video_id1');?>/hqdefault.jpg') center center no-repeat;">
+          <div class="vid_cutout" style="background: url('//img.youtube.com/vi/<? the_field('youtube_video_id1');?>/hqdefault.jpg') center center no-repeat;">
             <!-- <img class="vid_img img-responsive" src="http://img.youtube.com/vi/<? the_field('youtube_video_id1');?>/sddefault.jpg" itemprop="thumbnail"> -->
           <div class="vid_play"></div>
         </div>

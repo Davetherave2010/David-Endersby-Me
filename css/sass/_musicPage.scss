@@ -49,7 +49,7 @@
 /*Sets the Parameters for the play button*/
 .vid_play{
 	position: absolute;
-  display: block;
+  display: none;
 	background: url('../../img/YouTube-icon-dark.png') no-repeat;
 	background-size: contain;
 	height: 58px;
@@ -69,7 +69,7 @@
 // 	width: 100%;
 // }
 
-.video_cutout{
+.vid_cutout{
 	@include aspect-ratio(16,8.75);
 	background-size: cover !important;
 	overflow: hidden;
