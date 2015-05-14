@@ -49,7 +49,7 @@
 /*Sets the Parameters for the play button*/
 .vid_play{
 	position: absolute;
-   	display: block;
+  display: block;
 	background: url('../../img/YouTube-icon-dark.png') no-repeat;
 	background-size: contain;
 	height: 58px;
@@ -65,83 +65,90 @@
 .twoVideos{
 	margin-bottom: 10px;
 }
-.oneVideo .vid_cutout, .twoVideos .vid_cutout, .oneVideo .vid_img, .twoVideos .vid_img{
-	width: 100%;
-}
-/*Sets the size of the cutout and the size of the image on the music.php page youtube8 is single posts, youtube is double posts*/
-.twoVideos .vid_cutout, .oneVideo .vid_cutout{
+// .oneVideo .vid_cutout, .twoVideos .vid_cutout, .oneVideo .vid_img, .twoVideos .vid_img{
+// 	width: 100%;
+// }
+
+.video_cutout{
+	@include aspect-ratio(16,8.75);
+	background-size: cover !important;
 	overflow: hidden;
-	height: 143px;
-	@media (min-width: 350px){
-		height: 159px;
-	}
-	@media (min-width: 399px){
-		height: 189px;
-	}
-	@media (min-width: 450px) {
-		height: 230px;
-	}
-	@media (min-width: 600px) {
-		height: 319px;
-	}
-	@media (min-width: 699px){
-		height: 363px;
-	}
-	@media (min-width: 767px) {
-		height: 378px;
-	}
 }
-.twoVideos .vid_img, .oneVideo .vid_img{
-	z-index: 9;
-	margin-top: -26px;
-	@media (min-width: 350px){
-		margin-top: -30px;
-	}
-	@media (min-width: 399px){
-		margin-top: -33px;
-	}
-	@media (min-width: 450px) {
-		margin-top: -43px;
-	}
-	@media (min-width: 600px) {
-		margin-top: -55px;
-	}
-	@media (min-width: 699px){
-		margin-top: -64px;
-	}
-	@media (min-width: 767px) {
-		margin-top: -69px;
-	}
-}
-//Fallback if no jquery Otherwise unused
-.twoVideos .vid_play, .oneVideo .vid_play{
-	top: -125px;
-	left: 100px;
-	@media (min-width: 350px){
-		top: -140px;
-		left: 110px;
-	}
-	@media (min-width: 399px){
-		top: -165px;
-		left: 150px;
-	}
-	@media (min-width: 450px) {
-		top: -190px;
-		left: 170px;
-	}
-	@media (min-width: 600px) {
-		top: -240px;
-		left: 250px;
-	}
-	@media (min-width: 699px){
-		top: -270px;
-		left: 380px;
-	}
-	@media (min-width: 767px) {
-		top: -295px;
-		left: 320px;
-	}
-}
+
+/*Sets the size of the cutout and the size of the image on the music.php page youtube8 is single posts, youtube is double posts*/
+// .twoVideos .vid_cutout, .oneVideo .vid_cutout{
+// 	overflow: hidden;
+// 	height: 143px;
+// 	@media (min-width: 350px){
+// 		height: 159px;
+// 	}
+// 	@media (min-width: 399px){
+// 		height: 189px;
+// 	}
+// 	@media (min-width: 450px) {
+// 		height: 230px;
+// 	}
+// 	@media (min-width: 600px) {
+// 		height: 319px;
+// 	}
+// 	@media (min-width: 699px){
+// 		height: 363px;
+// 	}
+// 	@media (min-width: 767px) {
+// 		height: 378px;
+// 	}
+// }
+// .twoVideos .vid_img, .oneVideo .vid_img{
+// 	z-index: 9;
+// 	margin-top: -26px;
+// 	@media (min-width: 350px){
+// 		margin-top: -30px;
+// 	}
+// 	@media (min-width: 399px){
+// 		margin-top: -33px;
+// 	}
+// 	@media (min-width: 450px) {
+// 		margin-top: -43px;
+// 	}
+// 	@media (min-width: 600px) {
+// 		margin-top: -55px;
+// 	}
+// 	@media (min-width: 699px){
+// 		margin-top: -64px;
+// 	}
+// 	@media (min-width: 767px) {
+// 		margin-top: -69px;
+// 	}
+// }
+// //Fallback if no jquery Otherwise unused
+// .twoVideos .vid_play, .oneVideo .vid_play{
+// 	top: -125px;
+// 	left: 100px;
+// 	@media (min-width: 350px){
+// 		top: -140px;
+// 		left: 110px;
+// 	}
+// 	@media (min-width: 399px){
+// 		top: -165px;
+// 		left: 150px;
+// 	}
+// 	@media (min-width: 450px) {
+// 		top: -190px;
+// 		left: 170px;
+// 	}
+// 	@media (min-width: 600px) {
+// 		top: -240px;
+// 		left: 250px;
+// 	}
+// 	@media (min-width: 699px){
+// 		top: -270px;
+// 		left: 380px;
+// 	}
+// 	@media (min-width: 767px) {
+// 		top: -295px;
+// 		left: 320px;
+// 	}
+// }
 /*=========For Browsers between 992px and 1200px ================*/
 
 @media (min-width: 992px) and (max-width: 1200px) {
@@ -149,19 +156,19 @@
       height: 204px;
     }
     /*Sets the size of the cutout and the size of the image on the music.php page youtube8 is single posts, youtube is double posts*/
-	.oneVideo{
-		/*Sets the positions of the play button for single and double post*/
-		.vid_play{
-			top: -261px;
-			left: 269px;
-		}
-		.vid_cutout{
-			height: 326px;
-		}
-		.vid_img{
-			margin-top: -60px;
-		}
-	} 
+	// .oneVideo{
+	// 	/*Sets the positions of the play button for single and double post*/
+	// 	.vid_play{
+	// 		top: -261px;
+	// 		left: 269px;
+	// 	}
+	// 	.vid_cutout{
+	// 		height: 326px;
+	// 	}
+	// 	.vid_img{
+	// 		margin-top: -60px;
+	// 	}
+	// } 
 	.twoVideos{
 		.vid_play{
 			top: -171px;
@@ -178,18 +185,18 @@
 /*=========For Browsers 1200px and up =============================*/
 @media (min-width: 1200px){
 	    /*Sets the positions of the play button for single and double post*/
-	.oneVideo{
-		.vid_play{
-			top: -295px;
-			left: 328px;
-		}
-		.vid_cutout{
-			height: 400px;
-		}
-		.vid_img{
-			margin-top: -73px;
-		}
-	} 
+	// .oneVideo{
+	// 	.vid_play{
+	// 		top: -295px;
+	// 		left: 328px;
+	// 	}
+	// 	.vid_cutout{
+	// 		height: 400px;
+	// 	}
+	// 	.vid_img{
+	// 		margin-top: -73px;
+	// 	}
+	// } 
 	.twoVideos{
 		.vid_play{
 			top: -195px;

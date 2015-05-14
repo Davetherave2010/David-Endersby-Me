@@ -60,11 +60,12 @@ $the_query = new WP_Query($args); ?>
 <?php if(get_field('number_of_videos') === '1') {?>
   <div class="row musicBlogRow">
     <div class="col-md-8 col-md-offset-2 oneVideo">
-      <div class="vid_cutout">
-        <a href="<?php the_permalink();?>"><img class="vid_img img-responsive" src="http://img.youtube.com/vi/<? the_field('youtube_video_id1');?>/sddefault.jpg" itemprop="thumbnail">
-        <div class="vid_play"></div>
-        </a>
-      </div>
+      <a href="<?php the_permalink();?>">
+          <div class="video_cutout" style="background: url('//img.youtube.com/vi/<? the_field('youtube_video_id1');?>/hqdefault.jpg') center center no-repeat;">
+            <!-- <img class="vid_img img-responsive" src="http://img.youtube.com/vi/<? the_field('youtube_video_id1');?>/sddefault.jpg" itemprop="thumbnail"> -->
+          <div class="vid_play"></div>
+        </div>
+      </a>
     </div>
     <div class="col-sm-12 col-md-8 col-md-offset-2 vid_info" itemprop="about">
         <h3 itemscope itemtype="http://schema.org/MusicRecording"><span itemprop="byArtist"><?php the_field('artist1'); ?></span></h3>

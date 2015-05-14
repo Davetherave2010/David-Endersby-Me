@@ -23,7 +23,7 @@
 		</noscript>
 	</header>
 <?php } ?>
-<div class="container-fluid grey-bg" <?php if (!empty($headerImage)) { ?> style="background-color: <?php the_field('header_bg'); ?>"<?php }?>>
+<div class="container-fluid" <?php if (!empty($headerImage)) { ?> style="background-color: <?php the_field('header_bg'); ?>"<?php }?>>
   <ol class="breadcrumb container" <?php if (!empty($headerImage)) { ?>style="background-color: <?php the_field('header_bg'); ?>; color: <?php the_field('breadcrumbs_color'); ?>; font-weight: 100; <?php }?>;">
     <?php if(function_exists('bcn_display'))
     {
