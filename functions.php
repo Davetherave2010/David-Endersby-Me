@@ -27,12 +27,13 @@ function theme_js(){
 	// wp_enqueue_script('mainjs', get_template_directory_uri() .'/js/main.js', array('jquery'),'',true);
 	wp_enqueue_script('core', get_template_directory_uri() .'/build/js/core.min.js', array('jquery'),'',true);
 
-	// wp_register_script('about', get_template_directory_uri() .'/build/js/about.min.js', array(),'',true);
-	wp_register_script('about', get_template_directory_uri() .'/js/about.js', array(),'',true);
+	wp_register_script('about', get_template_directory_uri() .'/build/js/about.min.js', array(),'',true);
+	// wp_register_script('about', get_template_directory_uri() .'/js/about.js', array(),'',true);
 	wp_register_script('music', get_template_directory_uri() .'/build/js/music.min.js', array('jquery'),'',true);
 	wp_register_script('social', get_template_directory_uri() .'/build/js/social.min.js', array(),'',true);
 	wp_register_script('snap', get_template_directory_uri() .'/build/js/snap.min.js', array('jquery'),'',true);
 	wp_register_script('blogAnimation', get_template_directory_uri() .'/build/js/blogAnimation.min.js', array('jquery'),'',true);
+	wp_register_script('prism', get_template_directory_uri() .'/build/js/prism.min.js', array(),'',true);
 
 	//HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
 	global $wp_scripts;
@@ -46,6 +47,7 @@ function theme_js(){
 	if (is_home() or is_singular('post')) {
 		wp_enqueue_script('snap');
 		wp_enqueue_script('blogAnimation');
+		wp_enqueue_script('prism');
 	}
 	if (is_single()) {
 		wp_enqueue_script('social');
