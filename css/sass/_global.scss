@@ -112,10 +112,7 @@ header{
 }
 .navbar{
 	background-color: $c-white;
-	// box-shadow: 0 4px 8px -2px $c-light-grey;
-	// .home &, .page-template-music &{
-	// 	box-shadow: none;
-	// }
+	border-bottom: 1px solid #e9f0f3;
 }
 .navbar-collapse{
 	padding: 0;

@@ -18,12 +18,10 @@ Template name: Music
 <header class="red-bg container-fluid">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 hidden-sm hidden-xs">
-        <svg>
-          <image xlink:href="<?php bloginfo('template_directory'); ?>/img/music.svg" src="<?php bloginfo('template_directory'); ?>/img/music.png" width="100%" height="100%" class="img-responsive" alt="A black cog with a brain inside with an illuminated lightbulb in the top"/>
-        </svg>
-      </div>
-      <div class="col-md-6 banner-text">
+<!--       <div class="col-md-6 hidden-sm hidden-xs">
+        <img src="<?php bloginfo('template_directory'); ?>/img/music.svg" onerror="this.onerror=null; this.src='<?php bloginfo('template_directory'); ?>/img/music.png'" alt="Single Headphones illustration with lightning bolt running through the gap inbetween them">
+      </div> -->
+      <div class="col-md-12 banner-text">
           <h2>The Very Latest</h2>
           <h1>Music</h1>
           <h2>Electronic &amp; Dance</h2>
