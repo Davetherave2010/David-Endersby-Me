@@ -227,7 +227,7 @@
 
     //Makes API call
     makeRequest('http://api.bf4stats.com/api/playerRankings?plat=xone&name=davetherave2010&output=json','GET', function(battlefieldRankings){
-      getBattlefieldWorldRanking(battlefieldRankings); //Calculates percentage
+      //getBattlefieldWorldRanking(battlefieldRankings); //Calculates percentage
 
       battlefieldWorldRankSpan.textContent = 'Top ' + getBattlefieldWorldRanking(battlefieldRankings) + "%"; //Updates the value if needed
 
@@ -339,12 +339,16 @@
   }
   //Calculates rank percentage and inputs into dom
   function getBattlefieldWorldRanking(battlefieldRankings){
-
+    // console.log(battlefieldRankings);
     var totalUserCount = battlefieldRankings.rankings[0].count,
         myRank = battlefieldRankings.rankings[0].rank,
         percentageRank = Math.round((myRank/totalUserCount) * 100);
-
-    return percentageRank;
+        if (myRank === null){ 
+          console.error('No Rank received');
+          return 5; //Returns a value placeholder
+        }else{
+          return percentageRank;
+        }
   }
 
 
