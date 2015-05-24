@@ -13,9 +13,6 @@
 }
 
 @media(min-width: 700px){
-  .blog header, .single-post .svg-image-header{
-    margin-top: -150px;
-  }
   .about-treehouse-badges li{
     width: 20%;
     &:nth-child(n+4){ //Shows all 5 badges
@@ -71,9 +68,6 @@
   blockquote{
     margin: 1em 2em;
   }
-  .blog header, .single-post .svg-image-header{
-    margin-top: -100px;
-  }
   // .navbar-nav li:first-child a{
   //   padding-left: 0;
   // }
@@ -95,7 +89,7 @@
 }
 @media(max-width:990px){
   .blog article, .single-post article{
-    h1, .date{
+    h2, .date{
       text-align: center;
     }
   }

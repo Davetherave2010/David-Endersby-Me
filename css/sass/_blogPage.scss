@@ -18,9 +18,11 @@
 
 }
 .blog header, .single-post .svg-image-header{
+	//@include aspect-ratio(96,47.3);
+	padding: 4em 1.5em 0;
 	svg{
 		display: block;
-		max-height: 700px;
+		max-width: 900px;
 		margin: 0 auto;
 	}
 }
