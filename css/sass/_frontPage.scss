@@ -8,12 +8,6 @@
 		}
 	}
 	header{
-	//For Frontpage img
-		// svg{
-		// 	height: 475px;
-		// 	margin: 1em 0;
-		// 	width: 100%;
-		// }
 		ul{
 			list-style: none;
 			padding: 0;
@@ -27,7 +21,8 @@
 	.mainContent{
 		.row{
 			@include flexbox;
-			justify-content: center;
+			// justify-content: center;
+			-webkit-align-items: center;
 			align-items: center;
 			margin: 2.5em 0;
 			&:first-child{

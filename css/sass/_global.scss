@@ -50,15 +50,18 @@ a:hover, a:focus{
 }
 //Header overrides
 header{
-	.row{
-		@include flexbox;
-		justify-content: center;
-		align-items: center;
-	}
+	// .row{
+	// 	@include flexbox;
+	// 	justify-content: center;
+	// 	align-items: center;
+	// }
 	.banner-text{
 		@include flexbox;
-		flex-direction: column;
-		justify-content: center;
+		-webkit-flex-flow: column wrap;
+		flex-flow: column wrap;
+		// -webkit-justify-content: center;
+		// justify-content: center;
+		-webkit-align-items: center;
 		align-items: center;
 		margin: 11.22em 0;
 		text-align: center;

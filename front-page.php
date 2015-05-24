@@ -3,19 +3,15 @@
 <!--This is Your home page-->
 <header class="container-fluid frontPage-banner blue-bg">
   <div class="container">
-  <div class="row">
-<!--     <div class="col-md-6 hidden-sm hidden-xs">
-      <svg class="frontPage-brand-img">
-        <image xlink:href="<?php bloginfo('template_directory'); ?>/img/logo2.svg" src="<?php bloginfo('template_directory'); ?>/img/logo2.png" width="100%" height="100%" class="img-responsive" alt="A black cog with a brain inside with an illuminated lightbulb in the top"/>
-      </svg>
-    </div> -->
-    <div class="col-md-6 banner-text">
-      <h1>David Endersby</h1>
-      <ul>
-        <li>Web Developer</li>
-        <li>Geographer</li>
-        <li>Pizza lover</li>
-      </ul>
+    <div class="row">
+      <div class="col-md-12 banner-text">
+        <h1>David Endersby</h1>
+        <ul>
+          <li>Web Developer</li>
+          <li>Geographer</li>
+          <li>Pizza lover</li>
+        </ul>
+      </div>
     </div>
   </div>
 </header>
