@@ -29,7 +29,15 @@
 .blog	article, .single-post article{
 	h2, .date{
 		padding: 0;
-		color: #333;
+		text-align: center;
+		
+	}
+	h2{ color: #333; }
+	.date{
+		margin: 0 0 0.2em;
+		color: gray;
+	  font-size: 1.2em;
+	  font-family: inherit;
 	}
 }
 .blogWrapper{

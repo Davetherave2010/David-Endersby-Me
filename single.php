@@ -18,7 +18,7 @@
 	<header id="drawing" class="svg-image-header grey-bg">
 		<noscript>
 		  <svg>
-	      <image xlink:href="<?php bloginfo('template_directory'); ?>/img/blogHeaderDesk.svg" src="<?php bloginfo('template_directory'); ?>/img/blogHeaderDesk.png" width="100%" height="100%" class="img-responsive" alt="A black cog with a brain inside with an illuminated lightbulb in the top"/>
+	      <image xlink:href="<?php bloginfo('template_directory'); ?>/img/blogHeaderDesk.svg" src="<?php bloginfo('template_directory'); ?>/img/blogHeaderDesk.png" width="100%" height="100%" class="img-responsive" alt="A desk illustration with an computer monitor, ipad showing a moving chart, globe and some books"/>
 	    </svg>
 		</noscript>
 	</header>
@@ -36,7 +36,7 @@
 	
 <?php if (have_posts()):while (have_posts()):the_post();?>
 	<article>
-		<h4 class="col-md-text-align-left date"><?php the_date('jS F Y'); ?></h4>
+		<p class="date"><?php the_date('jS F Y'); ?></h4>
 		<h1><?php the_title(); ?></h1>
 		<?php the_content(); ?> 
 		<!--<?php //comments_template(); ?>-->

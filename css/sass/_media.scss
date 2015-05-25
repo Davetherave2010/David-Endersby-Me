@@ -81,19 +81,14 @@
     width: 33%;
   }
 }
+
 @media (min-width: 783px){
   .admin{ padding-top: 32px;} //Applies to navigation element
   .admin-bar header{
     padding-top: 83px;//height of nav + admin bar
   }
 }
-@media(max-width:990px){
-  .blog article, .single-post article{
-    h2, .date{
-      text-align: center;
-    }
-  }
-}
+
 @media(min-width:991px){
   .padding-left-8pc{
     padding-left: 8%;
@@ -113,6 +108,18 @@
   }
   .about-profile-skills li{
     width: 25%;
+  }
+  .blog article{
+    h2{
+      text-align: left;
+    }
+    .date{
+      float: right;
+      text-align: right;
+    }
+  }
+  .single-post article h2{
+    text-align: left;
   }
 }
 @media(min-width:1200px){
