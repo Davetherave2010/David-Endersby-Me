@@ -353,7 +353,7 @@
 
 
   //This makes the ajax request and then allows you to say what you want to do with the response.
-  makeRequest('//teamtreehouse.com/davidendersby.json', 'GET', function(treehouseData){
+  makeRequest('https://teamtreehouse.com/davidendersby.json', 'GET', function(treehouseData){
     //console.log(treehouseData);
     sortedTreehousePoints = sortObject(treehouseData.points, 'DESC');
     getTotalPoints(treehouseData);
