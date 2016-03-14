@@ -41,7 +41,7 @@ Template name: Music
   </div>
 </div>
 
-<div class="container musicBlogWrapper content-wrapper" itemscope itemtype="http://schema.org/CreativeWork">
+<div class="container musicBlogWrapper content-wrapper" itemscope itemtype="https://schema.org/CreativeWork">
     
   <div class="row banner-text red-bg">
     <h2>Music Wall</h2>
@@ -60,14 +60,14 @@ $the_query = new WP_Query($args); ?>
     <div class="col-md-8 col-md-offset-2 oneVideo">
       <a href="<?php the_permalink();?>">
           <div class="vid_cutout" style="background: url('//img.youtube.com/vi/<? the_field('youtube_video_id1');?>/hqdefault.jpg') center center no-repeat;">
-            <!-- <img class="vid_img img-responsive" src="http://img.youtube.com/vi/<? the_field('youtube_video_id1');?>/sddefault.jpg" itemprop="thumbnail"> -->
+            <!-- <img class="vid_img img-responsive" src="https://img.youtube.com/vi/<? the_field('youtube_video_id1');?>/sddefault.jpg" itemprop="thumbnail"> -->
           <div class="vid_play"></div>
         </div>
       </a>
     </div>
     <div class="col-sm-12 col-md-8 col-md-offset-2 vid_info" itemprop="about">
-        <h3 itemscope itemtype="http://schema.org/MusicRecording"><span itemprop="byArtist"><?php the_field('artist1'); ?></span></h3>
-        <h3 itemscope itemtype="http://schema.org/Thing"><span itemprop="name"><?php the_field('title1'); ?></span></h3>
+        <h3 itemscope itemtype="https://schema.org/MusicRecording"><span itemprop="byArtist"><?php the_field('artist1'); ?></span></h3>
+        <h3 itemscope itemtype="https://schema.org/Thing"><span itemprop="name"><?php the_field('title1'); ?></span></h3>
         <?php     
         date_default_timezone_set('UTC');
 
@@ -98,7 +98,7 @@ $the_query = new WP_Query($args); ?>
           echo "<h3><span>Release date Unknown</span></h3>";
         }?>        
     </div>
-    <h4 class="col-md-12" itemscope itemtype="http://schema.org/MediaObject"><span itemprop="uploadDate">Posted: <?php echo get_the_date('jS F Y'); ?></span></h4>
+    <h4 class="col-md-12" itemscope itemtype="https://schema.org/MediaObject"><span itemprop="uploadDate">Posted: <?php echo get_the_date('jS F Y'); ?></span></h4>
   </div>
     <hr>
 <?php }elseif (get_field('number_of_videos') === '2') {?> 
@@ -106,14 +106,14 @@ $the_query = new WP_Query($args); ?>
 
         <div class="col-md-5 col-md-offset-1 twoVideos">
           <div class="vid_cutout">
-            <a href="<?php the_permalink();?>"><img class="vid_img img-responsive" src="http://img.youtube.com/vi/<? the_field('youtube_video_id1');?>/sddefault.jpg">
+            <a href="<?php the_permalink();?>"><img class="vid_img img-responsive" src="https://img.youtube.com/vi/<? the_field('youtube_video_id1');?>/sddefault.jpg">
               <div class="vid_play"></div>
             </a>
           </div>
 
           <div class="col-sm-12 vid_info" itemprop="about">
-              <h3 itemscope itemtype="http://schema.org/MusicRecording"><span itemprop="byArtist"><?php the_field('artist1'); ?></span></h3>
-              <h3 itemscope itemtype="http://schema.org/Thing"><span itemprop="name"><?php the_field('title1'); ?></span></h3>
+              <h3 itemscope itemtype="https://schema.org/MusicRecording"><span itemprop="byArtist"><?php the_field('artist1'); ?></span></h3>
+              <h3 itemscope itemtype="https://schema.org/Thing"><span itemprop="name"><?php the_field('title1'); ?></span></h3>
               <?php     
               date_default_timezone_set('UTC');
 
@@ -148,16 +148,16 @@ $the_query = new WP_Query($args); ?>
         
         <div class="col-md-5 twoVideos">
           <div class="vid_cutout">
-            <a href="<?php the_permalink();?>"><img class="vid_img img-responsive" src="http://img.youtube.com/vi/<? the_field('youtube_video_id2');?>/sddefault.jpg">
+            <a href="<?php the_permalink();?>"><img class="vid_img img-responsive" src="https://img.youtube.com/vi/<? the_field('youtube_video_id2');?>/sddefault.jpg">
               <div class="vid_play"></div>
             </a>
           </div>
 
           <div class="col-sm-12 vid_info" itemprop="about">
             <a href="<?php the_permalink();?>">
-              <h3 itemscope itemtype="http://schema.org/MusicRecording"><span itemprop="byArtist"><?php the_field('artist2'); ?></span></h3></a>
+              <h3 itemscope itemtype="https://schema.org/MusicRecording"><span itemprop="byArtist"><?php the_field('artist2'); ?></span></h3></a>
             <a href="<?php the_permalink();?>">
-              <h3 itemscope itemtype="http://schema.org/Thing"><span itemprop="name"><?php the_field('title2'); ?></span></h3>
+              <h3 itemscope itemtype="https://schema.org/Thing"><span itemprop="name"><?php the_field('title2'); ?></span></h3>
             </a> 
               <?php     
               date_default_timezone_set('UTC');
@@ -189,7 +189,7 @@ $the_query = new WP_Query($args); ?>
               }?>    
           </div><!-- End of Vid_info-->
       </div><!-- End of twoVideos-->
-      <h4 class="col-md-12" itemscope itemtype="http://schema.org/MediaObject"><span itemprop="uploadDate">Posted: <?php echo get_the_date('jS F Y'); ?></span></h4>
+      <h4 class="col-md-12" itemscope itemtype="https://schema.org/MediaObject"><span itemprop="uploadDate">Posted: <?php echo get_the_date('jS F Y'); ?></span></h4>
     </div><!-- End of musicBlogRow-->
   <hr>
 

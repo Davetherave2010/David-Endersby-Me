@@ -12,7 +12,7 @@
 	<?php if (have_posts()):while (have_posts()):the_post();?>
   <div class="row">
     <div class="col-sm-12 col-md-10 col-md-offset-1 single-music-video">
-      <iframe width="100%" height="100%" src="http://www.youtube.com/embed/<? the_field('youtube_video_id1');?>?rel=0&controls=0&iv_load_policy=3&showinfo=0&autoplay=<?php if (get_field('number_of_videos') == 1) {
+      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/<? the_field('youtube_video_id1');?>?rel=0&controls=0&iv_load_policy=3&showinfo=0&autoplay=<?php if (get_field('number_of_videos') == 1) {
         echo 1;}else{echo 0;}?>" frameborder="0" allowfullscreen></iframe>
       </div>
 
@@ -64,7 +64,7 @@
   <div class="container single-music-blogWrapper">
     <div class="row">
       <div class="col-sm-12 col-md-10 col-md-offset-1 single-music-video">
-        <iframe width="100%" height="100%" src="http://www.youtube.com/embed/<? the_field('youtube_video_id2');?>?rel=0&controls=0&iv_load_policy=3&showinfo=0&autoplay=0" frameborder="0" allowfullscreen></iframe>
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/<? the_field('youtube_video_id2');?>?rel=0&controls=0&iv_load_policy=3&showinfo=0&autoplay=0" frameborder="0" allowfullscreen></iframe>
       </div>
       <h2 class="col-sm-12 col-md-8 col-md-offset-1">Release Date: <?php
       $acfdate2 = get_field('release_date3');
