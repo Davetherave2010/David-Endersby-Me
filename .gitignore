@@ -59,3 +59,5 @@ Thumbs.db
 *.min.css
 *.map
 *.min.js
+
+data/*.json
