@@ -13,6 +13,11 @@
 	      </div>
 	    </div>
 	</footer>
+
+	<script type="text/javascript">
+		var template_directory_uri = "<?php echo get_template_directory_uri(); ?>";
+	</script>
+
 	<?php wp_footer(); ?>
 	</body>
 </html>

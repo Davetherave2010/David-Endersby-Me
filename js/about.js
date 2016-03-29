@@ -64,7 +64,7 @@
           }
         }
       } catch(e) {
-        alert('Caught Exception: ' + e.description);
+        console.error('Caught Exception: ' + e.description);
       }
     };
     httpRequest.open(type, url);
@@ -226,7 +226,7 @@
           battlefieldSummaryInnerWrapper.insertBefore(battlefieldWorldRank, document.querySelector('#battlefieldScore'));
 
     //Makes API call
-    makeRequest('http://api.bf4stats.com/api/playerRankings?plat=xone&name=davetherave2010&output=json','GET', function(battlefieldRankings){
+    makeRequest(template_directory_uri + '/data/rankings.json', 'GET', function(battlefieldRankings){
       //getBattlefieldWorldRanking(battlefieldRankings); //Calculates percentage
 
       battlefieldWorldRankSpan.textContent = 'Top ' + getBattlefieldWorldRanking(battlefieldRankings) + "%"; //Updates the value if needed
@@ -351,7 +351,6 @@
         }
   }
 
-
   //This makes the ajax request and then allows you to say what you want to do with the response.
   makeRequest('https://teamtreehouse.com/davidendersby.json', 'GET', function(treehouseData){
     //console.log(treehouseData);
@@ -362,7 +361,7 @@
     makeAjaxVisible(document.querySelector('.about-treehouse'));
   });
 
-   makeRequest('http://api.bf4stats.com/api/playerInfo?plat=xone&name=davetherave2010&output=json','GET', function(battlefieldData){
+   makeRequest(template_directory_uri + '/data/playerInfo.json','GET', function(battlefieldData){
     //console.log(battlefieldData);
     getBattlefieldSummaryData(battlefieldData);
     getBattlefieldDetailedStats(battlefieldData);
