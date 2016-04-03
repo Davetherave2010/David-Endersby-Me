@@ -188,10 +188,9 @@
 
   //A function that returns the url for the player emblem
   function getBattlefieldEmblem(battlefield){
-    var battlefieldEmblemImage = battlefield.player.rank.imgLarge;
+    var battlefieldEmblemImage = battlefield.player.rank.imgLarge.split('/');
 
-    battlefieldEmblemImage = '//www.bf4stats.com/img/' + battlefieldEmblemImage;
-    return battlefieldEmblemImage;
+    return template_directory_uri + '/data/' + battlefieldEmblemImage[2];
   }
 
   // Gets battlefield ajax response and inserts it into the summary div

@@ -60,4 +60,4 @@ Thumbs.db
 *.map
 *.min.js
 
-data/*.json
+data/
