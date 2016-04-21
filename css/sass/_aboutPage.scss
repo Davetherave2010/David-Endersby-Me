@@ -1,87 +1,85 @@
-.page-template-about{
+.page-template-about {
 	background-color: $c-light-grey;
-	h1{margin-bottom: 0;}
-	section[class^='col-']{
+	h1 { margin-bottom: 0; }
+	section [class^='col-'] {
 		padding: 0;
 	}
 }
-.card{
+.card {
 	background-color: $c-white;
 	border-radius: 3px;
 	padding: 1em;
-	margin: 0 0.325em;
+	margin: 0 .325em;
+	.nojs-warning & {
+		background-color: $c-treehouse-business-orange;
+		color: #fff;
+		margin-bottom: 1em;
+		text-align: center;
+		p {
+			margin-bottom: 0;
+		}
+	}
 }
-.ajax{
+.ajax {
 	display: none;
 }
-.ajax-loaded{
+.ajax-loaded {
 	max-height: 100em !important;
-	.loading{ //Once ajax has loaded, any loading elements are hidden
+	.loading { //Once ajax has loaded, any loading elements are hidden
 		display: none;
 	}
-} 
-.loading{
-	display: block;
-	margin: 1em auto 0.5em;
-	opacity: 0.5;
 }
-.block-footer{
-	text-align: center;
+.loading {
+	display: block;
+	margin: 1em auto .5em;
+	opacity: .5;
 }
 
-.about-intro{
+.about-intro {
 	margin: 1em 0;
-	&-title{
+	&-title {
 		@extend %text-center;
 		text-align: center;
 	}
 }
-.about-profile{
+.about-profile {
 	text-align: center;
-	margin-bottom: 0.75em;
-	h2{
-		margin: 0.25em 0;
+	margin-bottom: .75em;
+	h2 {
+		margin: .25em 0;
 	}
-	ul{
+	ul {
 		list-style: none;
 		padding: 0;
 	}
-	&-intro{
-		margin: 0.5em 0 1.25em;
-		span{ 
-			display: block; 
-			font-size: 0.9em;
+	&-intro {
+		margin: .5em 0 1.25em;
+		span {
+			display: block;
+			font-size: .9em;
 			//font-style: italic;
 			line-height: 1;
 		}
 	}
-	&-skills{
+	&-skills {
 		clear: both;
-		padding: 0.75em 0;
-		ul{
+		padding: .75em 0;
+		ul {
 			display: flex;
-		  flex-wrap: wrap;
-		  align-items: center;
+			flex-wrap: wrap;
+			align-items: center;
 		}
-	  li{
-	  	display: inline-block;
-  	  width: 16.66667%;
-		  margin: 0.5em 0;
-		  padding: 0.25em;
-		  opacity: 0.5;
-	  }
+		li {
+			display: inline-block;
+			width: 16.66667%;
+			margin: .5em 0;
+			padding: .25em;
+			opacity: .5;
+		}
 	}
 }
-.nojs-warning .card{
-	background-color: $c-treehouse-business-orange;
-	color: white;
-	margin-bottom: 1em;
-	text-align: center;
-	p{
-		margin-bottom: 0;
-	}
-}
-.about-treehouse{
+
+.about-treehouse {
 	margin-bottom: 1em;
 	padding-bottom: 2em;
 	overflow: hidden;
@@ -92,81 +90,81 @@
 	-moz-transition: max-height 1s;
 	-ms-transition: max-height 1s;
 	transition: max-height 1s;
-	h2{
+	h2 {
 		@extend %about-section-titles;
 	}
-	.card > p{
+	.card > p {
 		margin: 0;
 		text-align: center;
-	  font-size: 1.1em;
-	  font-weight: 300;
+		font-size: 1.1em;
+		font-weight: 300;
 	}
-	span{
+	span {
 		font-style: italic;
 	}
-	&-skills{
+	&-skills {
 		width: 95%;
 		margin: 1em auto;
 		padding: 0;
 		list-style: none;
-		li{
+		li {
 			display: inline-block;
 			vertical-align: top;
 			// margin: 0.25em 0;
 			width: 50%;
 		}
 		p {
-		  font-size: 0.9em;
-		  font-weight: 300;
-		  padding-left: 1.4em;
-		  //font-style: italic;
+			font-size: .9em;
+			font-weight: 300;
+			padding-left: 1.4em;
+			//font-style: italic;
 		}
-		.bullet{
+		.bullet {
 			float: left;
 			display: block;
-			margin: 0.4em 0.5em 1em 0;
-		  width: 0.75em;
-		  height: 0.75em;
-		  background-color: $c-grey;
-		  text-indent: -9999px;
-		  border-radius: 1em;
+			margin: .4em .5em 1em 0;
+			width: .75em;
+			height: .75em;
+			background-color: $c-grey;
+			text-indent: -9999px;
+			border-radius: 1em;
 		}
-		.javascript span{ background-color: $c-treehouse-js-red;}
-		.php span{ background-color: $c-treehouse-php-purple;}
-		.business span{ background-color: $c-treehouse-business-orange}
-		.css span{ background-color: $c-treehouse-css-blue;}
-		.development span{ background-color: $c-treehouse-dev-grey;}
-		.design span{ background-color: $c-treehouse-design-yellow;}
-		.html span{ background-color: $c-treehouse-html-blue;}
-		.wordpress span{ background-color: $c-treehouse-wordpress-purple;}
-		.ios span{ background-color: $c-treehouse-ios-blue;}
-		.android span{ background-color: $c-treehouse-android-green;}
+		.javascript span { background-color: $c-treehouse-js-red;}
+		.php span { background-color: $c-treehouse-php-purple;}
+		.business span { background-color: $c-treehouse-business-orange}
+		.css span { background-color: $c-treehouse-css-blue;}
+		.development span { background-color: $c-treehouse-dev-grey;}
+		.design span { background-color: $c-treehouse-design-yellow;}
+		.html span { background-color: $c-treehouse-html-blue;}
+		.wordpress span { background-color: $c-treehouse-wordpress-purple;}
+		.ios span { background-color: $c-treehouse-ios-blue;}
+		.android span { background-color: $c-treehouse-android-green;}
 
 	}
-	&-badges{
+	&-badges {
 		margin: 1.5em 0 2em;
 		padding: 0 1.25em;
-  	list-style: none;
-  	li{
-  		display: inline-block;
-  		position: relative;
-  		top: 0;
-  		width: 33%;
-		  padding: 0.4em 0.4em 0.2em;
-		  -webkit-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent), to(rgba(255,255,255,0.2)));
-		  // -webkit-transition: all 0.5s ease;
-		  // -moz-transition: all 0.5s ease;
-		  // -ms-transition: all 0.5s ease;
-		  // transition: all 0.5s ease;
-		  &:nth-child(n+4){ //Only shows first 3 badges
-		  	display: none;
-		  }
-  	}
-  	img{ width: 100%; }
+		list-style: none;
+		li {
+			display: inline-block;
+			position: relative;
+			top: 0;
+			width: 33%;
+			padding: .4em .4em .2em;
+			-webkit-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent), to(rgba(255, 255, 255, .2)));
+			// -webkit-transition: all 0.5s ease;
+			// -moz-transition: all 0.5s ease;
+			// -ms-transition: all 0.5s ease;
+			// transition: all 0.5s ease;
+			&:nth-child(n+4) { //Only shows first 3 badges
+				display: none;
+			}
+		}
+		img { width: 100%; }
 	}
 }
 
-.about-battlefield{
+.about-battlefield {
 	max-height: 9em;
 	overflow: hidden;
 
@@ -174,74 +172,74 @@
 	-moz-transition: max-height 1s;
 	-ms-transition: max-height 1s;
 	transition: max-height 1s;
-	h2{
+	h2 {
 		@extend %about-section-titles;
 		margin-bottom: 1em;
 	}
-	&-summary{
+	&-summary {
 		@include flexbox();
 		flex-wrap: wrap;
-	  align-content: center;
-	  justify-content: center;
-	  align-items: center;
+		align-content: center;
+		justify-content: center;
+		align-items: center;
 
 		text-transform: uppercase;
 		text-align: center;
 		font-size: 1.4em;
 		font-weight: bold;
-		a{
+		a {
 			display: block;
-			margin-bottom: 0.25em;
+			margin-bottom: .25em;
 			color: $c-black;
 		}
-		span{
+		span {
 			font-weight: 300;
 		}
-		hr{
+		hr {
 			display: block;
 			width: 50%;
-			margin: 0.25em auto;
+			margin: .25em auto;
 		}
 	}
-	&-detailed-stats{
+	&-detailed-stats {
 		clear: both;
-		padding: 0.75em 0;
+		padding: .75em 0;
 		text-align: center;
 		font-size: 1.3em;
 		font-weight: bold;
-		span{
+		span {
 			font-weight: 300;
 		}
-		#battlefieldTimePlayed{
+		#battlefieldTimePlayed {
 			display: block;
-			margin-bottom: 0.1em;
+			margin-bottom: .1em;
 			font-size: 1.1em;
 			font-weight: bold;
-			span{
+			span {
 				display: block;
 				font-weight: 300;
-				margin: 0.1em 0 0.5em;
+				margin: .1em 0 .5em;
 			}
 		}
-		.battlefield-accuracy{
-			span{
+		.battlefield-accuracy {
+			span {
 				margin-right: 5px;
 				font-weight: bold;
 				line-height: 60px;
-			  font-size: 2.5em;
+				font-size: 2.5em;
 			}
-			p{
+			p {
 				display: inline-block;
 				font-weight: 300;
 				text-align: left;
-				margin: 0.1em 0;
+				margin: .1em 0;
 			}
-		}	
+		}
 	}
 }
-.block-footer{
-	font-size: 0.95em;
+.block-footer {
+	font-size: .95em;
 	font-weight: 300;
 	text-align: center;
-	p{ margin: 0; }
+	p { margin: 0; }
 }
