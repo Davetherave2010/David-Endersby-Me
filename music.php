@@ -35,18 +35,18 @@ Template name: Music
     <div class="col-md-10 col-md-offset-1 introduction">
         <?php if (have_posts()): while (have_posts()):the_post(); ?>
           <?php the_content(); ?>
-        <?php endwhile; endif; 
-        wp_reset_query(); ?>  
+        <?php endwhile; endif;
+        wp_reset_query(); ?>
     </div>
   </div>
 </div>
 
 <div class="container musicBlogWrapper content-wrapper" itemscope itemtype="https://schema.org/CreativeWork">
-    
+
   <div class="row banner-text red-bg">
     <h2>Music Wall</h2>
   </div>
-<?php 
+<?php
 $args = array(
   'post_type' => 'music',
 );
@@ -59,8 +59,8 @@ $the_query = new WP_Query($args); ?>
   <div class="row musicBlogRow">
     <div class="col-md-8 col-md-offset-2 oneVideo">
       <a href="<?php the_permalink();?>">
-          <div class="vid_cutout" style="background: url('//img.youtube.com/vi/<? the_field('youtube_video_id1');?>/hqdefault.jpg') center center no-repeat;">
-            <!-- <img class="vid_img img-responsive" src="https://img.youtube.com/vi/<? the_field('youtube_video_id1');?>/sddefault.jpg" itemprop="thumbnail"> -->
+          <div class="vid_cutout" style="background: url('https://img.youtube.com/vi/<?php the_field('youtube_video_id1');?>/hqdefault.jpg') center center no-repeat;">
+            <!-- <img class="vid_img img-responsive" src="https://img.youtube.com/vi/<?php the_field('youtube_video_id1');?>/sddefault.jpg" itemprop="thumbnail"> -->
           <div class="vid_play"></div>
         </div>
       </a>
@@ -68,7 +68,7 @@ $the_query = new WP_Query($args); ?>
     <div class="col-sm-12 col-md-8 col-md-offset-2 vid_info" itemprop="about">
         <h3 itemscope itemtype="https://schema.org/MusicRecording"><span itemprop="byArtist"><?php the_field('artist1'); ?></span></h3>
         <h3 itemscope itemtype="https://schema.org/Thing"><span itemprop="name"><?php the_field('title1'); ?></span></h3>
-        <?php     
+        <?php
         date_default_timezone_set('UTC');
 
         $acfdate1 = get_field('release_date1');
@@ -96,17 +96,17 @@ $the_query = new WP_Query($args); ?>
         }else{
           #You don't know the release date
           echo "<h3><span>Release date Unknown</span></h3>";
-        }?>        
+        }?>
     </div>
     <h4 class="col-md-12" itemscope itemtype="https://schema.org/MediaObject"><span itemprop="uploadDate">Posted: <?php echo get_the_date('jS F Y'); ?></span></h4>
   </div>
     <hr>
-<?php }elseif (get_field('number_of_videos') === '2') {?> 
+<?php }elseif (get_field('number_of_videos') === '2') {?>
     <div class="row musicBlogRow">
 
         <div class="col-md-5 col-md-offset-1 twoVideos">
           <div class="vid_cutout">
-            <a href="<?php the_permalink();?>"><img class="vid_img img-responsive" src="https://img.youtube.com/vi/<? the_field('youtube_video_id1');?>/sddefault.jpg">
+            <a href="<?php the_permalink();?>"><img class="vid_img img-responsive" src="https://img.youtube.com/vi/<?php the_field('youtube_video_id1');?>/sddefault.jpg">
               <div class="vid_play"></div>
             </a>
           </div>
@@ -114,7 +114,7 @@ $the_query = new WP_Query($args); ?>
           <div class="col-sm-12 vid_info" itemprop="about">
               <h3 itemscope itemtype="https://schema.org/MusicRecording"><span itemprop="byArtist"><?php the_field('artist1'); ?></span></h3>
               <h3 itemscope itemtype="https://schema.org/Thing"><span itemprop="name"><?php the_field('title1'); ?></span></h3>
-              <?php     
+              <?php
               date_default_timezone_set('UTC');
 
               $acfdate1 = get_field('release_date1');
@@ -142,13 +142,13 @@ $the_query = new WP_Query($args); ?>
               }else{
                 #You don't know the release date
                 echo "<h3><span>Release date Unknown</span></h3>";
-              }?>    
+              }?>
           </div><!-- End of Vid_info-->
         </div><!-- End of twoVideos-->
-        
+
         <div class="col-md-5 twoVideos">
           <div class="vid_cutout">
-            <a href="<?php the_permalink();?>"><img class="vid_img img-responsive" src="https://img.youtube.com/vi/<? the_field('youtube_video_id2');?>/sddefault.jpg">
+            <a href="<?php the_permalink();?>"><img class="vid_img img-responsive" src="https://img.youtube.com/vi/<?php the_field('youtube_video_id2');?>/sddefault.jpg">
               <div class="vid_play"></div>
             </a>
           </div>
@@ -158,8 +158,8 @@ $the_query = new WP_Query($args); ?>
               <h3 itemscope itemtype="https://schema.org/MusicRecording"><span itemprop="byArtist"><?php the_field('artist2'); ?></span></h3></a>
             <a href="<?php the_permalink();?>">
               <h3 itemscope itemtype="https://schema.org/Thing"><span itemprop="name"><?php the_field('title2'); ?></span></h3>
-            </a> 
-              <?php     
+            </a>
+              <?php
               date_default_timezone_set('UTC');
 
                 $acfdate2 = get_field('release_date3');
@@ -186,7 +186,7 @@ $the_query = new WP_Query($args); ?>
               }else{
                 #You don't know the release date
                 echo "<h3><span>Release date Unknown</span></h3>";
-              }?>    
+              }?>
           </div><!-- End of Vid_info-->
       </div><!-- End of twoVideos-->
       <h4 class="col-md-12" itemscope itemtype="https://schema.org/MediaObject"><span itemprop="uploadDate">Posted: <?php echo get_the_date('jS F Y'); ?></span></h4>
@@ -204,6 +204,3 @@ $the_query = new WP_Query($args); ?>
 
 
 <?php include_once ("footer.php"); ?>
-
-
-
