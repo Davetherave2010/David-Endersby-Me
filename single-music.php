@@ -12,12 +12,12 @@
 	<?php if (have_posts()):while (have_posts()):the_post();?>
   <div class="row">
     <div class="col-sm-12 col-md-10 col-md-offset-1 single-music-video">
-      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/<? the_field('youtube_video_id1');?>?rel=0&controls=0&iv_load_policy=3&showinfo=0&autoplay=<?php if (get_field('number_of_videos') == 1) {
+      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/<?php  the_field('youtube_video_id1');?>?rel=0&controls=0&iv_load_policy=3&showinfo=0&autoplay=<?php if (get_field('number_of_videos') == 1) {
         echo 1;}else{echo 0;}?>" frameborder="0" allowfullscreen></iframe>
       </div>
 
 <div class="col-sm-11 col-md-offset-1 vid_info" itemprop="about">
-        <?php     
+        <?php
         date_default_timezone_set('UTC');
 
         $acfdate1 = get_field('release_date1');
@@ -45,11 +45,11 @@
         }else{
           #You don't know the release date
           echo "<h3><span>Release date Unknown</span></h3>";
-        }?>        
+        }?>
     </div>
   </div>
 
-<?php if (get_field('number_of_videos') == 2) {?> 
+<?php if (get_field('number_of_videos') == 2) {?>
   </div>
   <div class="container-fluid red-bg">
     <div class="row">
@@ -64,9 +64,9 @@
   <div class="container single-music-blogWrapper">
     <div class="row">
       <div class="col-sm-12 col-md-10 col-md-offset-1 single-music-video">
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/<? the_field('youtube_video_id2');?>?rel=0&controls=0&iv_load_policy=3&showinfo=0&autoplay=0" frameborder="0" allowfullscreen></iframe>
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/<?php  the_field('youtube_video_id2');?>?rel=0&controls=0&iv_load_policy=3&showinfo=0&autoplay=0" frameborder="0" allowfullscreen></iframe>
       </div>
-      <h2 class="col-sm-12 col-md-8 col-md-offset-1">Release Date: <?php
+      <h2 class="col-sm-12 col-md-8 col-md-offset-1">Release Date: php
       $acfdate2 = get_field('release_date3');
       $date3 = new DateTime($acfdate2);
       $release_date2 = strtotime($date3->format('d-m-Y'));
@@ -99,13 +99,13 @@
     <div class="fb-like" data-href="<?php the_permalink(); ?>" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
     <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="<?php the_permalink();?>">Tweet</a>
   </div>
-<?php comments_template(); ?> 
+<?php comments_template(); ?>
 </div>
 
 <?php endwhile;else: ?>
 	<article>
 		<p>You have encountered an error. This could be disastrous!</p>
-	</article>	
+	</article>
 <?php endif; ?>
 
 <?php get_footer(); ?>
