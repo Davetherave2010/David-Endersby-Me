@@ -64,7 +64,7 @@
     header{
       margin-bottom: 2px;
     }
-  } 
+  }
   blockquote{
     margin: 1em 2em;
   }
@@ -120,6 +120,10 @@
   }
   .single-post article h2{
     text-align: left;
+  }
+  .blog .content-wrapper,
+  .single-post .content-wrapper {
+    width: 750px;
   }
 }
 @media(min-width:1200px){
