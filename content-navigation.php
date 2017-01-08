@@ -1,8 +1,8 @@
 <nav class="navbar navbar-fixed-top <?php if (is_user_logged_in()) { echo 'admin';} ?>" role="navigation">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header" <?php if (is_singular('post')) { ?> style="background-color: <?php the_field('header_bg')?>";<?php } ?>>
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+    <div class="navbar-header" <?php if (is_singular('post')) { ?> style="background-color: <?php the_field('header_bg')?>;?>";<?php } ?>>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" <?php if (is_singular('post')) { ?> style="color: <?php the_field('breadcrumbs_color'); ?>";<?php } ?>>
         <span class="sr-only">Toggle navigation</span>
         &#9776; Menu
       </button>

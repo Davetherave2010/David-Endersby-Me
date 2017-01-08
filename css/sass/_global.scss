@@ -1,4 +1,4 @@
-$body-font-size: 17px;
+$body-font-size: 18px;
 html{height: 100%;}
 body{
 	font-family: $f-body;
@@ -6,7 +6,7 @@ body{
 	min-height: 100%;
 	font-size: $body-font-size;
 	background-color: $c-white;
-	line-height: 1.6em;
+	line-height: 30px;
 	font-weight: 400;
 	-webkit-font-smoothing: antialiased;
 }
@@ -100,6 +100,7 @@ header{
 	margin-top: 1.5em;
 }
 .social{
+	clear: both;
 	position: relative;
 	text-align: center;
 	width: 100%;
@@ -134,7 +135,7 @@ header{
 }
 .error404{
 	background-color: $c-blue;
-	h1{ 
+	h1{
 		margin-bottom: 0.75em;
 		@include font-rem(2);
 	}

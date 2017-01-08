@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php 
+<?php
 	$headerImage = get_field('header_img');
 	if (!empty($headerImage)) { ?>
 	<header class="container-fluid" style="background-color: <?php the_field('header_bg');?>;">
@@ -25,23 +25,23 @@
 <?php } ?>
 
 <div class="container content-wrapper">
-	
+
 <?php if (have_posts()):while (have_posts()):the_post();?>
 	<article>
 		<p class="date"><?php the_date('jS F Y'); ?></h4>
 		<h1><?php the_title(); ?></h1>
-		<?php the_content(); ?> 
+		<?php the_content(); ?>
 		<!--<?php //comments_template(); ?>-->
 	</article>
   <div class="social">
     <div class="fb-like" data-href="<?php the_permalink(); ?>" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
     <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="<?php the_permalink();?>">Tweet</a>
   </div>
-	<?php comments_template(); ?> 	
+	<?php comments_template(); ?>
 	<?php endwhile;else: ?>
 	<article>
 		<p>There are no posts to display</p>
-	</article>	
+	</article>
 	<?php endif; ?>
 
 

@@ -22,7 +22,7 @@
   <div class="full-width row">
     <section class="container introduction">
       <div class="col-md-12 text-center">
-          <h2>David Endersby<wbr> MSc BSc(Hons) FGS</h2>
+          <h2>David Endersby<wbr> MSc BSc(Hons)</h2>
       </div>
       <div class="col-md-10 col-md-offset-1">
           <?php echo the_content(); ?>
@@ -48,7 +48,7 @@
   <!--     <svg class="col-md-4 hidden-xs hidden-sm frontPage-icons" width="100%" height="280">
         <image xlink:href="<?php bloginfo('template_directory'); ?>/img/about1.svg" src="<?php bloginfo('template_directory'); ?>/img/about1.png" width="100%" height="280" class="img-responsive" alt="An illustrated man holding an xray of his abdomen up to his chest"/>
       </svg>
-   -->    
+   -->
       <section class="col-md-8 padding-right-8pc">
         <h2><?php the_field('about_title'); ?></h2>
         <p><?php the_field('about_text'); ?></p>
